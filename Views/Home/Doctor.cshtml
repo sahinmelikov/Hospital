@@ -1,0 +1,434 @@
+﻿@model HomeVM
+<!DOCTYPE html>
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from ankarasehir.saglik.gov.tr/TR-328383/acil-tip-klinigi-doktorlarimiz.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Aug 2023 19:17:52 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head id="Head2">
+	<title>
+		Acil Tıp Kliniği Doktorlarımız
+	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="Türkiye'nin En Büyük Hastanesi" />
+	<meta name="keywords" content="Ankara Bilkent Şehir Hastanesi, Hastane, Genel Hastane, Kalp Damar Hastanesi, Kalp Damar Hastanesi, Nöroloji - Ortopedi Hastanesi, Onkoloji Hastanesi, Çocuk Hastanesi, Kadın Doğum Hastanesi, Fizik Tedavi ve Rehabilitasyon Hastanesi, Klinik Araştırma Merkezi, Ana Kütle, Yoğun Bakımlar, YGAP, Endokrinoloji, Gastroenteroloji, Genel Cerrahi, Göz Hastalıkları, İç Hastalıkları, Kulak Burun Boğaz, Plastik Cerrahi, Psikiyatri, Tıbbi Genetik Polikliniği, Kardiyoloji, Kalp Damar Cerrahisi, İmmünoloji ve Alerji Hastalıkları Kliniği, Göğüs Hastalıkları, Çocuk Kalp ve Damar Cerrahisi, Göğüs Cerrahisi, Beyin Cerrahi, Dermatoloji, Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji, Nöroloji, Ortopedi, Algoloji, Gastroenteroloji Cerrahi, Geriatri, Hematoloji, Nefroloji, Radyasyon Onkolojisi, Aile Hekimliği, Romatoloji Cerrahi, Onkoloji, Tıbbi Onkoloji Üroloji, Sağlık Kurulu, Çocuk Acil, Çocuk Adolsan (Ergen Sağlığı), Çocuk Beyin Cerrahi Çocuk Cerrahisi, Çocuk Çözger (Sağlık Kurulu), Çocuk Diş, Çocuk Endokrinoloji Çocuk Enfeksiyon, Çocuk Fizik Tedavi ve Rehabilitasyon, Çocuk Gastroentereloji Çocuk Gelişimsel Pediatri, Çocuk Genetik,  Çocuk Göğüs Hastalıkları, Çocuk Göz, Çocuk Hematoloji ve Onkoloji, Çocuk İmmünoloji ve Alerji Hastalıkları, Çocuk Kardiyoloji Çocuk Metabolizma Hastalıkları,  Çocuk Nefroloji,  Çocuk Nöroloji,  Çocuk Ortopedi,  Çocuk Psikiyatri (Çocuk ve Ergen ve Ruh Sağlığı),  Çocuk Radyoloji,  Çocuk Romatoloji, Çocuk Sağlığı ve Hastalıkları (Genel Pediatri), Çocuk Sağlam Çocuk, Çocuk Üroloji, Çocuk Yenidoğan (Neonatoloji), Çocuk Emzirme - Relaktasyon ve Anne Destek, Çocuk Evde Sağlık Birimi, Çocuk Yoğun Bakım, Çocuk Palyatif Bakım Merkezi, Tekrarlayan Gebelik Kaybı, Suda Doğum, Polikistik Over Sendromu, Menopoz, Kronik Pelvik Ağrı ve Endometriyozis Polikliniği, Jinekoloji (Kadın Hastalıkları) 2, Jinekoloji (Kadın Hastalıkları ) 1, İnfertilite, IVF (Tüp Bebek ), Gençlik Merkezi, Gebe Okulu, Doğum Salonu-Antenatal ( Normal Gebelik Servisi ve Polikliniği), Cinsel Sağlık, Aile Planlaması, Acil Servis, Kadın Hastalıkları ve Doğum, Jinekolojik, Onkoloji Cerrahisi, Perinatoloji (Yüksek Riskli Gebelikler), Yeni Doğan Servisi, Beyin Hasarı Rehabilitasyon Kliniği Omurilik Hasarı Rehabilitasyon Kliniği Romatoloji, Ortopedi Rehabilitasyon ve Ağrı Kliniği, Subakut Rehabilitasyon Kliniği, Yabancı Hasta Kliniği, Pediatrik Rehabilitasyon Kliniği,  Omurilik Hasarı Rehabilitasyon Kliniği Romatoloji, Ortopedi Rehabilitasyon, Ağrı Kliniği, Subakut, Yabancı Hasta Kliniği, Pediatrik Rehabilitasyon, Laboratuvar,  Romatoloji, Ortopedi Rehabilitasyon ve Ağrı Kliniği Subakut Rehabilitasyon Kliniği - Yabancı Hasta Kliniği Pediatrik Rehabilitasyon" />
+
+
+	<script src="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/sablonlar/js/jquery.js"></script>
+	<script src="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/sablonlar/js/bootsrap.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BWSJ18VWD9"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-BWSJ18VWD9');
+	</script>
+
+	<link href="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/logolar/logo-tr.png" rel="icon" type="image/png" />
+	<link href="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/sablonlar/css/plugin.css" rel="stylesheet">
+
+	<link href="~/docpulse.com/Fonts/font-awesome.css" rel="stylesheet">
+	<link href="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/sablonlar/css/color/default.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+	<form method="post" action="https://ankarasehir.saglik.gov.tr/TR-328383/acil-tip-klinigi-doktorlarimiz.html" id="form2">
+		<div class="aspNetHidden">
+			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+			<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="fsQ8D+im9eAz+en6pMCrjJZz659j5U8MNfJnGuotO0IYAi/Wq34iABz3mJGAAsygF2XUnj1grObfx5yQPAgXGxmeTkdR5azpIMDaHLl/uge3SUnHvt+jQLV2AUe57FpVSfiP+Wc5Ae5QJcfT7sR6O8sKkLZmKcxGU7QKuqdOUBViBhpc/8oy53g6LLAlm9EG" />
+		</div>
+
+		<script type="text/javascript">
+			//<![CDATA[
+			var theForm = document.forms['form2'];
+			if (!theForm) {
+				theForm = document.form2;
+			}
+			function __doPostBack(eventTarget, eventArgument) {
+				if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+					theForm.__EVENTTARGET.value = eventTarget;
+					theForm.__EVENTARGUMENT.value = eventArgument;
+					theForm.submit();
+				}
+			}
+			//]]>
+		</script>
+
+
+		<script src="https://ankarasehir.saglik.gov.tr/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGrLVgeud-5BMEJm5m6WRzs6Tp7h-4HlwSMlGqpIxyiVf2Cxe8LpgDr3yMbKQC_UPw2&amp;t=637811839220000000" type="text/javascript"></script>
+
+
+		<script type="text/javascript">
+			//<![CDATA[
+			var wiy_page_data = {
+				SiteAnah: 3893,
+				Anah: 328383,
+				DilAnah: 1,
+				Dil: 'TR',
+				AppUrl: 'http://ankarasehir.saglik.gov.tr',
+				AppPath: '/',
+				KisaUrl: '!Amasf'
+			};
+
+			//]]>
+		</script>
+
+		<script src="https://ankarasehir.saglik.gov.tr/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvo9n-b26Tk3zOG1a2sQRNRBcq1nxZKuAlLMW-7uM2b84XB_v78n30CASaCYmJkbi9nrBlkcc3sbovuyRO1CTyROn94C3HzWczmwfiA2IM4wuPWNXFCxL4277wkMN06a8AlJomppmz2pZOHAHvoCFvWo1&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+		<script src="https://ankarasehir.saglik.gov.tr/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OCXi25SMu4dAvU71spGZFF8ZrkovS6vwj1WnBwMyPrBJRDeoxrNxmAiARQE8PbRK9FUBQJ1hJ98FMNBlEYqNOzP9rPmF_eIMnyuypoZV9zOxKFfJPETA58rwdQS89HkB5aZ4yGJo5nHAWbqaTH8hSa01&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+		<div class="aspNetHidden">
+
+			<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8D1365CC" />
+		</div>
+		<script type="text/javascript">
+			//<![CDATA[
+			Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form2', [], [], [], 90, 'ctl00');
+			//]]>
+		</script>
+
+
+
+
+
+
+
+		<!-- SiteAgacDal:1.0.0.0 --><div id="">
+
+
+			<section id="pages-header">
+
+				<div class="hc-overlay"></div>
+				<div class="container">
+					<ul id="page-path">
+						<li><a><b class="buradasiniz"></b></a></li>
+						<!-- YerBildirici:1.0.0.0 -->
+						<li><a href="https://ankarasehir.saglik.gov.tr/TR-658713/tibbi-birimler.html"> Tıbbi Birimler   </a></li>
+
+						<li><a href="https://ankarasehir.saglik.gov.tr/TR-658304/kliniklerimiz.html"> Kliniklerimiz   </a></li>
+
+						<li><a href="https://ankarasehir.saglik.gov.tr/TR-326237/acil-tip-klinigi.html"> Acil Tıp Kliniği   </a></li>
+
+						<li><a href="acil-tip-klinigi-doktorlarimiz.html"> Acil Tıp Kliniği Doktorlarımız   </a></li>
+
+					</ul>
+				</div>
+			</section>
+
+
+			<section class="pages-content">
+
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-md-3">
+							<div class="page-left-sidebar">
+
+								<!-- SiteAgacDallar:1.0.0.0 --><div id="ada_KlinikDetay" KendisiniGoster="True">
+									<div id="ada_KlinikDetay_items" class="SKItems">
+										<ul class="listed">
+
+											<li>
+												<a id="328383" target="_self" href="acil-tip-klinigi-doktorlarimiz.html">
+													Acil Tıp Kliniği Doktorlarımız
+												</a>
+											</li>
+
+											<li>
+												<a id="636356" target="_self" href="https://ankarasehir.saglik.gov.tr/TR-636356/asistan-doktorlarimiz.html">
+													Asistan Doktorlarımız
+												</a>
+											</li>
+
+											<li>
+												<a id="344291" target="_self" href="https://ankarasehir.saglik.gov.tr/TR-344291/acil-tip-klinigi-haberleri.html">
+													Acil Tıp Kliniği Haberleri
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+						<!-- col-md-3 -->
+
+
+						<div class="col-md-9">
+
+							<div class="pages-content-inner">
+
+
+								<div class="page-content-header">
+									<div class="row">
+
+										<div class="col-lg-8">
+											<h2>Acil Tıp Kliniği Doktorlarımız </h2>
+
+
+
+
+
+											<span class="update-date">
+												<b class="update-date-text"></b>
+												09  Mart  2023
+											</span>
+
+
+
+										</div>
+
+										<div class="col-lg-4">
+										</div>
+
+									</div>
+								</div>
+								<!-- page-content-header -->
+
+
+								<div id="div_print">
+
+
+									<!-- SiteAgacDallar:1.0.0.0 --><div id="ada_AltSayfalar">
+										<div id="ada_AltSayfalar_items" class="SKItems">
+											@foreach (var doctor in Model.DoctorsWithPosition)
+											{
+												@*if ((int)doctor.Hospital.Id==doctor.HospitalId)
+												{*@
+												<div class="doktorlar shadow">
+													<div class="d-flex justify-content-between">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <div class="doctor_image shadow">
+                                                                    <img src="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/Resim/750477/0/gulhan-kurtoglu-celikjpg.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-8">
+                                                                <div class="doktor_info_page">
+                                                                    <ul class="dr_list_info">
+                                                                        <li><b class="dr_name"></b><span>@doctor.Name</span></li>
+                                                                        <li><b class="dr_unvan"></b><span>Prof. Dr. @doctor.Name</span></li>
+
+                                                                    </ul>      
+                                                                </div>
+
+
+                                                            </div>
+
+
+
+                                                        </div>
+
+														<div>
+															<a class=" d-flex justify-content-end btn btn-outline-warning">Online Növbə</a>
+														</div>
+
+
+
+													</div>
+													
+												</div>	
+												@*}*@
+												
+											}
+										</div>
+
+                                      
+										
+										
+										<div id="ada_AltSayfalar_pager" class="SKPager"><span><ul class="sayfalandirici"><li><a class="sayfalandirici_aktifsayfa">1</a></li><li><a class="sayfalandirici_sayfa" href="acil-tip-klinigi-doktorlarimiz2f9b.html?Sayfa=2">2</a></li><li><a class="sayfalandirici_komut" href="acil-tip-klinigi-doktorlarimiz2f9b.html?Sayfa=2">></a></li><li><a class="sayfalandirici_komut" href="acil-tip-klinigi-doktorlarimiz2f9b.html?Sayfa=2">>></a></li></ul></span></div>
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+						</div>
+						<!-- pages-content-inner -->
+
+
+
+
+					</div>
+					<!-- col-md-9 -->
+
+
+				</div>
+
+		</div>
+		<!-- container -->
+		</section>
+
+
+
+
+		</div>
+
+
+
+
+		<script>
+
+			$(document).ready(function () {
+
+				$("#create_cerez").click(function () {
+					$.cookie("cerez_politikamiz", "ok_tr", { expires: 10 });
+					$(".cookie_policy").animate({ bottom: '-110px', opacity: '0' });
+				});
+
+				if ($.cookie("cerez_politikamiz") == "ok_tr") {
+					$(".cookie_policy").hide();
+				}
+
+			});
+
+			$(document).ready(function () {
+
+				function url_degistir(data, data2) {
+
+					data2 = "http://" + location.host.split(":")[0];
+					data = data.replace("WEB_ADRES", data2);
+					data = data.replace("WEB_ADRES_2", data2);
+
+					return data
+				}
+
+				$.get('https://ankarasehir.saglik.gov.tr/Cerez/cerez.tr.html', function (data) {
+					var content = url_degistir(data);
+					$("#print_cerez").html(content);
+				});
+
+			});
+
+		</script>
+
+		<script src="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/sablonlar/js/default.js"></script>
+		<script src="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/sablonlar/js/carosel.js"></script>
+		<script src="~/docpulse.com/HospitalDoctors/dosyahastane.saglik.gov.tr/WebFiles/sablonlar/js/lang/tr.js"></script>
+
+
+		<script type="text/javascript">
+
+			var sosyalmedya = [
+				['facebook', "https://www.facebook.com/ankarasehirhast"],
+				['youtube', "https://www.youtube.com/@@"ankarabilkentsehirhastanesi"],
+				['instagram', "https://www.instagram.com/ankarasehirhast/"],
+				['linkedin', "https://www.linkedin.com/company/ankarasehirhastanesi/mycompany/?viewAsMember=true"],
+				['twitter', "https://twitter.com/ankarasehirhast"]
+			];
+
+			var adres = "Ankara Bilkent Şehir Hastanesi  Üniversiteler Mahallesi 1604. Cadde No: 9 Bilkent/Çankaya/ANKARA ";
+			var telefon = "0 312 552 60 00";
+			var eposta = "ankarasehir@saglik.gov.tr";
+
+
+			$(document).ready(function () {
+
+				$.each(sosyalmedya, function (key, value) {
+					var link = value[1].length;
+					if (link > 9) {
+						sosyal = '<li><a href="' + value[1] + '" target="_blank"> <i class="fa fa-' + value[[0]] + '"></i> </a> </li> ';
+						$(".social-network").append(sosyal);
+						$(".social-mobiles").append(sosyal);
+						$(".social-networks").append(sosyal);  // for tsrm 4
+					}
+				});
+
+
+				var address = adres.length;
+				var phone = telefon.length;
+				var epostas = eposta.length;
+
+
+				if (address > 2) {
+					$(".adres").html("" + adres + "");
+
+					appentHTML = '<div class="footer_text">';
+					appentHTML += '<div class="row">';
+
+					appentHTML += '<div class="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12">';
+					appentHTML += '<i class="fa fa-home"></i> ';
+					appentHTML += '</div>';
+
+					appentHTML += '<div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">';
+					appentHTML += '<p> <b>Adres</b> <br /> ' + adres + ' </p>';
+					appentHTML += '</div>';
+
+					appentHTML += '</div>';
+
+					appentHTML += '</div>';
+
+					$('.contact_data1').append(appentHTML);
+				}
+
+				if (phone > 2) {
+					$(".telefon").html("" + telefon + "");
+
+					appentHTML = '<div class="footer_text">';
+					appentHTML += '<div class="row">';
+
+					appentHTML += '<div class="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12">';
+					appentHTML += '<i class="fa fa-phone"></i> ';
+					appentHTML += '</div>';
+
+					appentHTML += '<div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">';
+					appentHTML += '<p> <b>Telefon</b> <br /> ' + telefon + ' </p>';
+					appentHTML += '</div>';
+
+					appentHTML += '</div>';
+
+					appentHTML += '</div>';
+
+					$('.contact_data1').append(appentHTML);
+				}
+
+				if (epostas > 2) {
+					$(".eposta").html("" + eposta + "");
+
+					appentHTML = '<div class="footer_text">';
+					appentHTML += '<div class="row">';
+
+					appentHTML += '<div class="col-xl-2 col-lg-12 col-md-12 col-sm-12 col-12">';
+					appentHTML += '<i class="fa fa-mail"></i> ';
+					appentHTML += '</div>';
+
+					appentHTML += '<div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">';
+					appentHTML += '<p> <b>E-Posta</b> <br /> <a href="mailto:' + eposta + '" target="_blank"> ' + eposta + ' </a> </p>';
+					appentHTML += '</div>';
+
+					appentHTML += '</div>';
+
+					appentHTML += '</div>';
+
+					$('.contact_data1').append(appentHTML);
+				}
+
+
+
+
+
+
+
+			});
+
+
+		</script>
+
+
+	</form>
+
+</body>
+
+<!-- Mirrored from ankarasehir.saglik.gov.tr/TR-328383/acil-tip-klinigi-doktorlarimiz.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Aug 2023 19:18:09 GMT -->
+</html>
+

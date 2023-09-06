@@ -1,0 +1,83 @@
+	.modal {
+		width: 100%;   height: 100%;  overflow: auto;   background-color: rgb(0,0,0);  background-color: rgba(0,0,0,0.4); 
+	} 
+	#video_modal_header {
+		padding:10px 15px	
+	}  
+	#video_modal_header .video_title {
+		font-size:17px; text-align:left;
+	} 
+	.close {
+		color: #444; float: right;  font-size: 28px;  font-weight: bold;
+	} 
+	.close:hover,.close:focus {
+		color: black; text-decoration: none;  cursor: pointer;
+	} 
+	.modal-header .close {
+		padding: 1rem 1rem;  margin: -0.5rem -1rem -1rem auto;
+	} 
+	.modal-header {
+		padding: 17px 16px; color: #444;   
+	} 
+	.modal-body {
+		padding: 22px 16px;
+	} 
+	.modal-header h2 { 
+		font-size: 17px; position: absolute; left: 10px; top: 10px; z-index:-1
+	} 
+	.modal-content {
+		z-index: 9999;
+		position: relative;
+		background-color: #fefefe;
+		margin: 6% auto;
+		padding: 20;
+		border: 1px solid #888;
+		width: 50%;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		-webkit-animation-name: animatetop;
+		-webkit-animation-duration: 0.9s;
+		animation-name: animatetop;
+		animation-duration: 0.9s
+	} 
+	.modal_video {
+		margin: 12% auto; width: 80%; 
+	} 
+	@media(min-width:1000px) { 
+		.modal-body p iframe {
+			margin:0px auto; padding:0px; text-align:center; display:block; width: 70%; height: 450px;
+		}
+		.modal-body p img {
+			margin:0px auto; padding:0px; text-align:center; display:block; width: 100%;
+		}
+	}	
+	@media(max-width:1000px) {
+		.modal-header h2 { 
+			font-size: 14px; position: absolute; left: 10px; top: 10px; 
+		}		
+		.modal-body p { 
+			height:auto;  
+		}
+		.modal-body p iframe {
+			width: 98%; height: auto
+		}
+		.modal-body p img {
+			width: 98%; height: auto
+		} 
+		.modal-content {
+			width: 90%;
+		} 
+	}
+	@-webkit-keyframes animatetop {
+		from {top: -300px; opacity: 0} 
+		to {top: 0; opacity: 1}
+	}
+	@keyframes animatetop {
+		from {top: -300px; opacity: 0}
+		to {top: 0; opacity: 1}
+	}
+	#div_print h4 {
+		display:block
+	} 
+	a {
+		text-decoration:none
+	}

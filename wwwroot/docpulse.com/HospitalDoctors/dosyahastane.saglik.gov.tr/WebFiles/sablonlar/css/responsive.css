@@ -1,0 +1,533 @@
+ 
+@media screen and (min-width: 1750px) {
+	.page-content-body img {
+		max-width:90%
+	}
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1446px) {	
+	.page-content-body img {
+		max-width:90%
+	}
+}
+
+@media screen and (min-width: 991px) and (max-width: 1200px) {
+	#mainMenu nav > ul > li > a { 
+		padding: 10px 8px; font-size: 13px; 
+	}
+	#main-slider-2 .no-padding-left {
+		padding-right: 15px; padding-left: 15px;
+	}
+	#manset_yani {
+		display:table; margin-top:30px;
+	}	
+	.offset-1 {
+		margin-left: 0;
+	}	
+	
+	/** 
+		Şablon 5 Settings
+	**/		
+	.post_external_link_content {
+		height: 100px;  margin-bottom:20px;
+	} 
+	.post_external_link li {
+		float:left
+	}
+				
+	.post_external_link li a {
+		display: block; 
+	}
+		
+	.page-content-body img {
+		max-width:90%
+	}		
+}
+
+
+@media(max-width:991px) {
+ 	
+	
+	#mobile_search_menu {
+		display:none
+	}
+	.social-networks {
+		display:none
+	}
+
+	.rd-mobilemenu_ul li:last-child {
+		/* display:none */
+	}
+
+	#search-blog .form-control { 
+		font-size: 13px; height: 35px; 
+	}
+	#search-blog .input-group-addon { 
+		padding: 11px 15px; 
+	}	
+	#search-blog .btn {
+		width: 35px; padding-top: 5px; height: 35px; 
+	}	
+	
+
+	/* Header  Settings **/
+	
+	#auto_banner .site_banner {
+		display:none;
+	} 
+ 	#auto_banner .mobile_banner {
+		display:block;  
+	} 
+	
+	.languages {
+		display:none
+	} 
+	#header-top {
+		background: #fff;
+	}
+
+	#header-top-content { 
+		height: 60px; 
+	} 
+	#header-middle-content #logo img {
+		float: none; display: block; height: 55px; margin: 0px auto; padding: 0px; text-align: center; margin-top:-10px; 
+	} 			
+	#header-middle-content #logo  {
+		display: block; padding-top: 2px; padding: 0px; margin: 0px auto; text-align: center;
+	}  
+	#header-middle-content #logo h1 {
+		font-size:15px
+	}  	
+	#header-middle-content #logo h2 {
+		font-size:13px;
+	} 	 
+	#header-middle-content #logo h3 {
+		font-size:17px;
+	} 
+	#header-middle {
+		background:none
+	}
+
+	#header-middle .container {
+		/* max-width:100% */
+	} 
+	
+			
+	#header-middle .default  {
+		background:#fff url(../images/header/header-mobil.png)  98% 0% no-repeat;  
+	} 	
+	#header-middle .hospital {
+		background:#fff  url(../images/header/header-mobil.png) 100% -10px no-repeat;
+	}	
+ 	#header-middle .istanbul {
+		background:#fff  url(../images/header/header-mobil.png) 100% center no-repeat;
+	}	
+  	#header-middle .izmir {
+		background:#fff  url(../images/header/header-mobil.png) 100% center no-repeat;
+	}	
+   	#header-middle .ankara {
+		background:#fff  url(../images/header/header-mobil.png) 100% center no-repeat;
+	}	
+    
+	#header-middle .gaziler_tr, #header-middle .gaziler_en  {
+		background:#fff  url(../images/header/header-mobil.png) 100% center no-repeat;
+	}	
+    #header-middle .gaziler_tr, #header-middle .kirgiz_header  {
+		background:#fff  url(../images/header/header-mobil.png) 100% center no-repeat;
+	}	
+ 
+	#header-middle-content { 
+		height: auto
+	}	
+	
+	.rd-mobilemenu, .rd-mobilepanel {
+		display: block;
+	}
+
+ 
+	#search-blog .input-group {
+		background-color: transparent !important; width: 96%; 
+	}
+	#search-blog .form-control { 
+		font-size: 13px; 
+	} 
+	
+	#mainMenu {
+		display:none
+	}
+	
+	.site_language {
+		display:none
+	}
+	
+	.mobile-top-menu {
+		display:block; position: fixed; right: 20px; top: 9px; z-index: 999; list-style:none 
+	} 	
+	.mobile-top-menu li {
+		 float:left; 
+	} 		
+	.mobile-top-menu li a {
+		 background:#f2f2f2; float:left; margin-right:4px; color:#666; display:block; padding:6px 9px; font-size:13px
+	} 
+	.mobile-top-menu li a:hover {
+		 background:#e3e3e3; border-radius:3px;
+	} 
+	.mobile-top-menu li a i {
+		 font-size:13px
+	} 
+	.mobile-top-menu .dropdown {
+	  position: relative; display: inline-block;
+	} 
+ 
+	
+	#header-top .top-menu-list { 
+		display:none
+	}	
+	.header-bottom {
+		display:none
+	}
+	
+	.search-bg {
+		display:none
+	}
+	
+	
+		/** 
+			Full Slider Settings General 
+		**/
+		
+		#main-slider-full .item img {
+			width: 100%; height: auto; 
+		}
+
+		#main-slider-full .slider-desc-center  { 
+			background: rgba(255, 255, 255, 0.789); padding:10px; border-top:0px; left: 3%; right: 3%; display: block; text-align: center; 
+			width: auto; bottom: 2%; 
+		} 
+		#main-slider-full .slider-desc-center h1 {
+			font-size: 13px; line-height: 22px;
+		} 
+		#main-slider-full .slider-desc-center h4 {
+			font-size: 17px; text-align: center;  display: block; margin: 0px auto; padding: 0px; 
+		}  
+		#main-slider-full .active .slider-desc-center span {
+			font-size: 14px;
+		}
+		#main-slider-full .main-slider .owl-dots { 
+		  display: none;
+		}
+		.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled { 
+		  display: none;
+		}	
+  
+		/** 
+			Şablon 2 Settings
+		**/		
+		
+		
+		#main-slider-2 {
+			margin-top: 210px;
+		}	
+		
+		#main-slider-2 .main-slider-2 {
+			height: auto
+		}
+		#main-slider-2 .main-slider-2 img {
+			height:auto;
+		}	
+		#manset_yani {
+			display:table; margin-top:30px;
+		}	
+		#manset_yani .listed-date li a span {
+			background:none
+		}
+		#manset_yani .left-headline .tab-pane {
+			height: auto
+		}	
+		
+		#main-slider-2 .no-padding-left {
+			padding-right: 15px; padding-left: 15px;
+		}
+	
+		.left-headline .rightmenu-footer {
+			position: unset;
+			 
+		}	
+		
+		.slider-desc-center h4 {
+			font-size:13px;
+		}
+	
+	
+		#post_icons .offset-1 {
+			margin-left: 0%;
+		}
+		
+		#post_icons .icons a .shadow {
+			height: auto; 
+		}
+		#post_icons .icons .frame {
+			height: auto;
+		}
+		#post_icons .icons .shadow img {
+			height: auto; 
+		}
+		
+		
+		
+		.tab2 .nav-pills .nav-link.active::after {
+			content: none
+		}
+ 
+		/** 
+			end Şablon 3 Settings
+		**/
+		
+		.tab-item-box { 
+			height: auto; margin-bottom:60px
+		}	
+		.tab-left-footer { 
+			position: unset; 
+		}		
+			
+			
+		/** 
+			Şablon 4 Settings
+		**/		
+			
+		#mainthumb {
+			display:none
+		}
+		
+		
+		.listed-date li a span {
+			background:none
+		}		
+			
+		/** 
+			Şablon 5 Settings
+		**/	
+
+		.post_external {
+			margin:30px 0px; border-radius:0px;
+		}
+		
+		.post_external_link_content {
+			height:auto;  margin-bottom:20px;
+		} 
+		.post_external_link li {
+			display: inline-block;   
+		}
+					
+		.post_external_link li a {
+			display: inline-block;  border:none; 
+		}
+							
+		.post_external_link li a span {
+			font-size:11px;
+		}
+		
+		
+		
+		
+	
+	
+	/** 
+		Şehir Hastaneleri Hızlı Bağlantılar
+	**/
+	
+	#city_post_carosel {
+		position:relative; margin-top:50px;  z-index:1
+	}  
+  
+	#sehir_baglantilar {
+		display:none
+	}
+	  
+	.mobil_baglantilar {
+		display:block; margin-top:150px; padding:20px 10px;
+	}
+	
+	
+	
+	
+	
+	
+	/** 
+		Background Tab Settings General 
+	**/
+	.background-tab-content { 
+		margin: -400px 0 0 0;
+	} 
+	.background-tab-content .nav-pills {
+		margin: 2px;
+	}	
+	.background_tab_header {
+		display:none
+	}
+	.nav-item {
+		width:100%;  
+	}
+	#tab-menu-list li a{
+		font-size: 15px;
+	}
+	.background-tab-content .tab-content { 
+		margin-top: 40px;
+	}
+	.background-tab-content .nav-pills .nav-link.active::after {
+		content: none; 
+	}
+ 
+ 
+	#page-path { 
+		margin: 0px auto;  padding: 0px; display: table; text-align: center; margin-top: 20px;
+	}
+
+	.doktor_info_page { 
+		margin-top: 0px; padding: 20px 3px;
+	}	
+	.dr_list_info li { 
+		margin-bottom: 3px; padding: 10px 0px; border-bottom: 1px solid #f2f2f2;
+	}
+
+	.dr_list_info li b, .dr_list_info li span { 
+		width: auto; float: none; text-align:center;
+	}  
+	
+	.doktor_cv_linkler {
+		text-align:center; margin: 0px auto; padding:0px; display:block
+	}
+	
+	/** 
+		 General Settings
+	**/
+
+
+	#tabmenu_left .listed-date li a span {
+		background: none;
+	}
+	
+	#tabmenu_right .listed-date li a span {
+		background: none;
+	}
+	
+	.tab-menu-list { 
+		margin: 0px auto;
+		padding: 0px;
+		text-align: center;
+		display: block;
+		padding: 10px;
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	.listed-date li a { 
+		margin-bottom: 6px; border-bottom: 1px solid #f2f2f2; height: auto;  display: block;
+	} 	 
+	.listed-date li a span {
+		display: block; background:none; float: none; font-size: 13px; color: #31649b; height: auto; width:  auto; 
+		border-radius: 0px; margin-right: 0px; padding:0px; text-align: left;
+		line-height: 13px; padding-bottom: 8px; 
+	} 
+	.listed-date li a span b {
+		display: inline-block; 
+	} 
+
+	#background-tab .listed-date li a span {
+		background: none; color:none
+	}	
+  
+	.page-button {
+		float: left; margin-top:10px;
+	}
+	.page-button .btn-primary, .page-button .btn-danger, .page-button .btn-success {
+		background: #efefef; border: 1px solid #e3d8d8; padding: 2px 4px;
+	}
+	
+	/**
+		Footer Settings General 
+	**/
+	
+	#mobile-footer {
+		display:block; padding-top:30px;
+	}	
+	#mobile-footer .panel-default > .panel-heading {
+		background: none; 
+	}
+	#mobile-footer .panel-group .panel {
+		background: none; 
+	}
+	
+	#mobile-footer .panel-group .panel {
+		background: none; 
+	}
+
+	footer {
+		display:none;
+	}
+	
+	#mobile-footer .social-mobiles li a i, #mobile-footer  .social-network li a i {
+		background:#fff; 
+	}
+		
+	#mobile-footer .footer_social_content {
+		text-align:center; display:table; margin:0px auto; padding:0px; 
+	}
+	#mobile-footer .footer_social_content h4 {
+		text-align:center; color:#fff 
+	}
+	#mobile-footer .footer-bottom p span {
+		font-size:11px;
+	}
+	
+	
+	.cookie_policy p {
+		font-size:11px;
+	}
+	
+	.cookie_policy .btn-primary, .cookie_policy .btn-danger {
+		margin:0px auto; padding:0px; text-align:center; display:block; width:80px; margin-top: 5px; padding:2px 1px
+	}
+	
+	#scrollUp {
+		display:none
+	}
+
+	.page-content-body img {
+		max-width:90%
+	}	
+}
+
+ 
+
+@media screen and (min-width: 350px) and (max-width: 624px) {	
+	/*  	
+		.rd-mobilemenu_ul li:last-child {
+			display:none
+		} 
+	*/
+	
+	.page-content-body img {
+		max-width:90%
+	}
+}
+
+
+
+
+
+ 
+
+
+
+
+
+
+

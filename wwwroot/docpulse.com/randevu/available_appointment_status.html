@@ -1,0 +1,481 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from 195.175.45.150:7070/randevu/available_appointment_status.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 16:45:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+﻿    <title>HAYAT HASTANESİ</title>
+    
+    <meta name="viewport" content="width=550">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="randevu, hastane" />
+    <meta name="description" content="HAYAT HASTANESİ" />
+    <meta name="robots" content="index,follow" />
+    <meta name="Author" content="Sinerji Bilisim" />
+    <meta name="Developer" content="Sinerji Bilisim" />
+    
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    
+    <script src="js/common.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/mask.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/zebra_datepicker.js"></script>
+    <script>
+		var number_elements = ['fr_identity_no', 'fr_birth_date', 'fr_upn', 'fr_mobile_phone', 'fr_home_phone', 'fr_work_phone', 'fr_verification_code'];
+		var letter_elements = ['fr_name', 'fr_surname', 'fr_father_name', 'fr_mother_name'];
+		
+		var special_keys = [8, 9, 13, 16, 17, 18, 20, 37, 39, 46, 144];
+		var number_keys  = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
+		var letter_keys  = [65, 66, 67, 220, 68, 69, 70, 71, 219, 72, 73, 222, 74, 75, 76, 77, 78, 79, 191, 80, 81, 82, 83, 186, 84, 85, 221, 86, 87, 88, 89, 90, 32, 190];
+		var numbers      = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+		var letters      = ['A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'O', 'Ö', 'P', 'Q', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'W', 'X', 'Y', 'Z', ' ', '.'];
+		
+		var num_msg = 'Yalnızca rakam giriniz!';
+		var char_msg = 'Yalnızca harf giriniz!';
+		
+		function show_warning(element, msg) {
+			$('#errmsg').css('top', $(element).offset().top - $('#main_div').offset().top);
+			$('#errmsg').html(msg).show().fadeOut('slow');
+		}
+		
+		function check_date(which) {//KULLANILMIYOR
+			if(which < 48 || which > 57) return false;
+			
+			var now = new Date;
+			var year = now.getFullYear();
+			var month = now.getMonth() + 1;
+			var day = now.getDate();
+			var old_year = year - 120;
+			var y1 = Math.floor(year / 1000);
+			var y2 = Math.floor(year / 100);
+			var y3 = Math.floor(year / 10);
+			var o1 = Math.floor(old_year / 1000);
+			var o2 = Math.floor(old_year / 100);
+			var o3 = Math.floor(old_year / 10);
+			
+			if($('#fr_birth_date').val().length == 0) {
+				if(which < 48 || which > 51) return false;
+			}
+			if($('#fr_birth_date').val().length == 1 && $('#fr_birth_date').val()[0] == '0') {
+				if(which < 49 || which > 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 1 && $('#fr_birth_date').val()[0] == '3') {
+				if(which < 48 || which > 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 3) {
+				if(which < 48 || which > 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 49 || which > 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[3] == '1') {
+				if(which < 48 || which > 50) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[0] == '3' && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 48 || which > 57 || which == 50) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val().substr(0, 2) == '31' && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 48 || which > 57 || which == 50 || which == 52 || which == 54 || which == 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val().substr(0, 2) == '31' && $('#fr_birth_date').val()[3] == '1') {
+				if(which < 48 || which > 57 || which == 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 6) {
+				if(which - 48 != o1 && which - 48 != y1) return false;
+			}
+			if($('#fr_birth_date').val().length == 7) {
+				var c2 = $('#fr_birth_date').val().substr(6, 1) + (which - 48);
+				if(c2 < o2 || c2 > y2) return false;
+			}
+			if($('#fr_birth_date').val().length == 8) {
+				var c3 = $('#fr_birth_date').val().substr(6, 2) + (which - 48);
+				if(c3 < o3 || c3 > y3) return false;
+			}
+			if($('#fr_birth_date').val().length == 9) {
+				var c4 = $('#fr_birth_date').val().substr(6, 3) + (which - 48);
+				if(c4 < old_year || c4 > year) return false;
+				if(c4 == year && parseInt($('#fr_birth_date').val().substr(3, 2)) > month) return false;
+				if(c4 == year && parseInt($('#fr_birth_date').val().substr(3, 2)) == month && parseInt($('#fr_birth_date').val().substr(0, 2)) > day) return false;
+				if($('#fr_birth_date').val().substr(0, 5) == '29.02' && c4 % 4 > 0) return false;
+			}
+			
+			return true;
+		}
+		
+		$(document).ready(function() {
+			$('input').keyup(function(e) {
+				//input type date olarak değiştirildi kontrole gerek kalmadı
+				if (e.target.getAttribute("name") != "fr_birth_date")
+				{
+					$(e.target).val($(e.target).val().replace("ı","I").replace("i","İ").toUpperCase());
+					
+					if(($(e.target).attr('id') == 'fr_identity_no' && $('#fr_identity_no').val().length == 11) || ($(e.target).attr('id') == 'fr_birth_date' && $('#fr_birth_date').val().length == 10)) {
+						$(":input")[$(":input").index(document.activeElement) + 1].focus();
+					}
+				}
+			});
+			
+			$('input').keydown(function(e) {
+				if(number_elements.indexOf($(e.target).attr('id')) >= 0) {
+					if(number_keys.indexOf(e.which) == -1 && special_keys.indexOf(e.which) == -1) {
+						show_warning(e.target, num_msg);
+						return false;
+					}
+				} else if(letter_elements.indexOf($(e.target).attr('id')) >= 0) {
+					if(letter_keys.indexOf(e.which) == -1 && special_keys.indexOf(e.which) == -1) {
+						show_warning(e.target, char_msg);
+						return false;
+					}
+				}
+				
+			//	if(letter_keys.indexOf(e.which) >= 0 && $(e.target).attr('id') != 'fr_email') {
+			//		$(e.target).val($(e.target).val() + letters[letter_keys.indexOf(e.which)]);
+			//		return false;
+			//	}
+			});
+			//input type date olarak değiştirildi kontrole gerek kalmadı
+			$('#fr_birth_date2').keypress(function(e) {
+				return check_date(e.which);
+			});
+			
+			//$('#fr_identity_no').mask('99999999999');
+			//$('#fr_birth_date').mask('99.99.9999');
+			$('#fr_mobile_phone').mask('(999) 999 99 99');
+			$('#fr_home_phone').mask('(999) 999 99 99');
+			$('#fr_work_phone').mask('(999) 999 99 99');
+			
+			$('#fr_birth_date2').keydown(function(e) {
+				if(e.which != 8 && e.which != 46) {
+					if($('#fr_birth_date').val().length == 2 || $('#fr_birth_date').val().length == 5) $('#fr_birth_date').val($('#fr_birth_date').val() + '.');
+				}
+			});
+			
+			$('#fr_birth_date2').keyup(function(e) {
+				if(e.which != 8 && e.which != 46) {
+					if($('#fr_birth_date').val().length == 2 || $('#fr_birth_date').val().length == 5) $('#fr_birth_date').val($('#fr_birth_date').val() + '.');
+				}
+			});
+			
+
+			//$('#fr_birth_date').Zebra_DatePicker();
+			
+			var myTimer = setInterval(function() { $('#selected').fadeToggle('slow'); }, 1000);
+			
+			$('#main_table').css('width', $(window).width() - 33);
+		});
+		
+		$(window).resize(function() {
+			$('#main_table').css('width', $(window).width() - 33);
+		});
+		
+		function get_alert_message(param, value) {
+			$.ajaxSetup({ async: false });
+			var choice = true;
+			$.getJSON('get_alert_message5a85.html?type=1&amp;param=' + param + '&value=' + value,
+				function(data) {
+					if(data.Rows) {
+						for(var i = 0; i < data.Rows.length; i++) {
+							var rowData = data.Rows[i];
+							if(!window.confirm(rowData.message.replaceAll('~', '\r'))) {
+								i = data.Rows.length;
+								choice = false;
+							}
+						}
+					}
+				}
+			);
+			return choice;
+		}
+    </script>
+        <script>
+		function get_app_status(dr_id, dept_id) {
+			$.getJSON('get_appointment_status7301.html?dr_id=' + dr_id + '&dept_id=' + dept_id,
+				function(data){
+					if(data.Rows) {
+						var content =	'<tr class="status_title" style="font-size:17px;">' +
+										'  <td align="center">Tarih</td>' +
+										'  <td align="center">Gün</td>' +
+										'  <td align="center">Uygunluk</td>' +
+										'</tr>';
+						
+						for(var i = 0; i < data.Rows.length; i++) {
+							rowData = data.Rows[i];
+							content +=	'<tr>' +
+										'  <td class="date">&ensp;&ensp;' + rowData.date + '</td>' +
+										'  <td class="day">&ensp;&ensp;' + rowData.day + '</td>' +
+										'  <td class="status">&ensp;&ensp;' + rowData.availability + '</td>' +
+										'</tr>';
+						}
+						$('#table_' + dr_id + '_' + dept_id).append(content);
+						wait('off');
+						$('#doctor_appointment_' + dr_id + '_' + dept_id).slideToggle('slow');
+						$('#doctors_bar_' + dr_id + '_' + dept_id).slideToggle('slow');
+					} else {
+						wait('off');
+					}
+				}
+			);
+		}
+		
+		function choice_doctor(dr_id, dept_id) {
+			if($('#table_' + dr_id + '_' + dept_id).html() == '') {
+				wait('on');
+				get_app_status(dr_id, dept_id);
+			} else {
+				$('#doctor_appointment_' + dr_id + '_' + dept_id).slideToggle('slow');
+				$('#doctors_bar_' + dr_id + '_' + dept_id).slideToggle('slow');
+			}
+		}
+		
+		function choice_from_list(list_id, item_id, item_name) {
+			if(list_id == 1) {
+				wait('on');
+				$('#substation_title').html(item_name);
+				close_list('doctors',
+					function() {
+						close_list('departments',
+							function() {
+								$('#departments').html('');
+								close_list('substations',
+									function() {
+										$.getJSON('get_departmentse646.html?off_id=' + item_id,
+											function(data) {
+												if(data.Rows) {
+													var selected_dept = false;
+													var content = '';
+													for(var i = 0; i < data.Rows.length; i++) {
+														rowData = data.Rows[i];
+														content +=	'<button id="department_' + rowData.id + '" class="departments" onclick="choice_from_list(2, ' + rowData.id + ', \'' + rowData.name + '\');">' +
+																	'  <table>' +
+																	'    <tr>' +
+																	'      <td><img src="images/stethoscope2.png" width="40" /></td>' +
+																	'      <td style="padding-left:5px;">' + rowData.name + '</td>' +
+																	'    </tr>' +
+																	'  </table>' +
+																	'</button>';
+														
+														if(rowData.id == $('#bc_id').val()) selected_dept = true;
+													}
+													$('#departments').html(content);
+													$('#department_list').attr('onClick', 'close_list(\'doctors\', function() { click_list(\'departments\'); });');
+													wait('off');
+													if(selected_dept) {
+														choice_from_list(2, $('#bc_id').val(), $('#bc_name').val());
+													} else {
+														$('#department_title').html(txt01[pt]);
+														open_list('departments');
+													}
+												}
+											}
+										);										
+									}
+								);
+							}
+						);
+					}
+				);
+			} else if(list_id == 2) {
+				wait('on');
+				$('#bc_id').val(item_id);
+				$('#bc_name').val(item_name);
+				$('#department_title').html(item_name);
+				close_list('departments',
+					function() {
+						close_list('substations',
+							function() {
+								$.getJSON('get_doctorsb3e7.html?bc_id=' + item_id,
+									function(data) {
+										if(data.Rows) {
+											var content = '';
+											for(var i = 0; i < data.Rows.length; i++) {
+												rowData = data.Rows[i];
+												content +=	'<button class="doctors" onclick="choice_doctor(' + rowData.dr_id + ', ' + rowData.dept_id + ');">' +
+															'  <table>' +
+															'    <tr>' +
+															'      <td><img src="./images/doctor_' + rowData.gender + '.png" width="60px" /></td>' +
+															'      <td style="padding-left:5px;">' +
+															'        <font style="font-size:18px;">' + rowData.dr_name + '</font><br />' +
+															'        <font style="font-size:15px;"><b>' + rowData.dept_name + '</b></font>' +
+															'      </td>' +
+															'    </tr>' +
+															'  </table>' +
+															'</button>' +
+															'<div id="doctor_appointment_' + rowData.dr_id + '_' + rowData.dept_id + '" class="doctor_appointments">' +
+															'  <table id="table_' + rowData.dr_id + '_' + rowData.dept_id + '" width="434" border="0" cellpadding="3" cellspacing="2"></table>' +
+															'</div>' +
+															'<div id="doctors_bar_' + rowData.dr_id + '_' + rowData.dept_id + '" class="bar" style="width:434px; display:none;"></div>';
+											}
+											$('#doctors').html(content);
+											open_list('doctors', function() { if(data.Rows.length == 1) { choice_doctor(rowData.dr_id, rowData.dept_id); } });
+											wait('off');
+										}
+									}
+								);
+							}
+						);
+					}
+				);
+			}
+		}
+		
+		function open_list(list_name, func) {
+			var bar = list_name + '_bar';
+			var width = parseInt($('#' + bar).css('width').replace('px', ''));
+			width += 8;
+			if(width < 435) {
+				setTimeout(
+					function () {
+						$('#' + bar).attr('style', 'width:' + width + 'px;');
+						open_list(list_name, func);
+					}, 0
+				);
+			} else {
+				$('#' + bar).attr('style', 'width:434px;');
+				$('#' + list_name).slideDown('slow', func);
+			}
+		}
+		
+		function close_list(list_name, func) {
+			var bar = list_name + '_bar';
+			var width = parseInt($('#' + bar).css('width').replace('px', ''));
+			if(width == 434) {
+				$('#' + list_name).slideUp('slow',
+					function() {
+						$('#' + bar).attr('style', 'width:426px;');
+						close_list(list_name, func);
+					}
+				);
+			} else {
+				width -= 8;
+				if(width > 8) {
+					setTimeout(
+						function () {
+							$('#' + bar).attr('style', 'width:' + width + 'px;');
+							close_list(list_name, func);
+						}, 0
+					);
+				} else {
+					$('#' + bar).attr('style', 'width:0px;');
+					if(func) {
+						func();
+					}
+				}
+			}
+		}
+		
+		function click_list(list_name, func) {
+			var bar = list_name + '_bar';
+			var width = parseInt($('#' + bar).css('width').replace('px', ''));
+			if(width == 0) {
+				open_list(list_name, func);
+			} else if(width == 434) {
+				close_list(list_name, func);
+			}
+		}
+		
+		function wait(prc) {
+			if(prc == 'on') {
+				Popup.show('barrier', null, null, {'style':{'width':'100%', 'height':'100%', 'cursor':'wait'}});
+			} else if(prc == 'off') {
+				Popup.hide('barrier');
+			}
+		}
+    </script>
+  </head>
+  <body>
+    <input id="bc_id" type="hidden" value="" />
+    <input id="bc_name" type="hidden" value="" />
+    <table id="main_table" width="99%" align="left" border="0">
+      <tr>
+        <td>
+          <table align="center" border="0">
+﻿            <tr>
+              <td width="10"></td>
+              <td align="center"><a href="index.html"><img src="images/hospital_logo.png" width="250" /></a></td>
+              <td width="10"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="center" style="width:490px;">
+                <div class="shadow_top"></div>
+                <button id="substation_list" class="substation_list" onclick="click_list('substations');">
+                  <table align="center">
+                    <tr height="60">
+                      <td><img src="images/hospital1.png" width="60" /></td>
+                      <td id="substation_title" class="menu_item_caption">... HASTANE SEÇİNİZ ...</td>
+                    </tr>
+                  </table>
+                </button>
+                <div class="shadow_bottom"></div>
+                <div id="substations_bar" class="bar" style="width:0px;"></div>
+                <div id="substations" class="substation_slidetoggle">
+                  <button class="substations" onclick="choice_from_list(1, 2, 'HAYAT HASTANESİ');">
+                    <table>
+                      <tr>
+                        <td><img src="images/hospital2.png" width="40" /></td>
+                        <td style="padding-left:5px;">HAYAT HASTANESİ</td>
+                      </tr>
+                    </table>
+                  </button>
+                  <button class="substations" onclick="choice_from_list(1, 6, 'PENDİK ŞİFA HASTANESİ');">
+                    <table>
+                      <tr>
+                        <td><img src="images/hospital2.png" width="40" /></td>
+                        <td style="padding-left:5px;">PENDİK ŞİFA HASTANESİ</td>
+                      </tr>
+                    </table>
+                  </button>
+                  <button class="substations" onclick="choice_from_list(1, 4, 'AKTİF HAYAT TIP MERKEZİ');">
+                    <table>
+                      <tr>
+                        <td><img src="images/hospital2.png" width="40" /></td>
+                        <td style="padding-left:5px;">AKTİF HAYAT TIP MERKEZİ</td>
+                      </tr>
+                    </table>
+                  </button>
+                  <button class="substations" onclick="choice_from_list(1, 5, 'ÜROTAŞ HAYAT TIP MERKEZİ');">
+                    <table>
+                      <tr>
+                        <td><img src="images/hospital2.png" width="40" /></td>
+                        <td style="padding-left:5px;">ÜROTAŞ HAYAT TIP MERKEZİ</td>
+                      </tr>
+                    </table>
+                  </button>
+                </div>
+                <div class="shadow_top"></div>
+                <button id="department_list" class="department_list">
+                  <table align="center">
+                    <tr height="60">
+                      <td><img src="images/stethoscope1.png" width="60" /></td>
+                      <td id="department_title" class="menu_item_caption">... BÖLÜM SEÇİNİZ ...</td>
+                    </tr>
+                  </table>
+                </button>
+                <div class="shadow_bottom"></div>
+                <div id="departments_bar" class="bar" style="width:0px;"></div>
+                <div id="departments" class="department_slidetoggle"></div>
+                <div id="doctors_bar" class="bar" style="width:0px;"></div>
+                <div id="doctors" class="doctor_slidetoggle"></div>
+              </td>
+              <td></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+<script>
+	//BOS OLMA DURUMUNA GORE 0 SET EDILDI
+	pt = 0;
+	var txt01 = ['... BÖLÜM SEÇİNİZ ...', '... SELECT DEPARTMENT ...'];
+	$('#department_title').html(txt01[pt]);
+</script>
+
+  </body>
+
+<!-- Mirrored from 195.175.45.150:7070/randevu/available_appointment_status.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 16:45:32 GMT -->
+</html>

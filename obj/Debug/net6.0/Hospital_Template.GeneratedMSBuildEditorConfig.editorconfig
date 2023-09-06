@@ -16,12 +16,48 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Home/Doctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Home/Hospital.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3NwaXRhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Home/HospitalDoctors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3NwaXRhbERvY3RvcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Home/Randevu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSYW5kZXZ1LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Home/YeniRandevu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxZZW5pUmFuZGV2dS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Shared/Error.cshtml]
@@ -38,6 +74,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/wwwroot/docpulse.com/randevu/YeniRandevu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdFxkb2NwdWxzZS5jb21ccmFuZGV2dVxZZW5pUmFuZGV2dS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sahin/source/repos/Hospital_Template/Hospital_Template/Views/Shared/_Layout.cshtml]
