@@ -1,4 +1,15 @@
-﻿
+﻿@model HomeVM
+@{
+	double count = 0;
+}
+@{
+	double appointmentCount = 0;
+}
+@{
+	double hospitalCount =0;
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
 <div data-elementor-type="wp-page" data-elementor-id="587" class="elementor elementor-587 bg-img" data-elementor-settings="[]">
 	<div class="elementor-inner">
 		<div class="elementor-section-wrap">
@@ -68,13 +79,61 @@
 																	</a>
 
 
-																	<a href="">
-																		<div class="cartt d-flex flex-column ">
+																	<a asp-controller="Home" asp-action="AppointmentHastaSonuclari">
+																		<div class="cartt d-flex flex-column">
 																			<img src="https://dosyahastane.saglik.gov.tr/WebFiles/Sablonlar/images/sehir-hastaneleri-ikonlar/rapor.png" alt="">
 																			<h6>Hasta Sonuclari</h6>
+																			<h1 class=" d-none bildirim" id="notificationModal">
+																				<i style="color:red" class="bi bi-alarm-fill" id="alarmIcon"></i>
+																			</h1>
 																		</div>
+
+
 																	</a>
+																	
+																	@if (ViewData["ShowH1"] != null && (bool)ViewData["ShowH1"])
+																	{
+																		<script>
+																			document.getElementById("notificationModal").classList.remove("d-none");
+																		</script>
+																	}
+
                                                                  
+																	<!-- Button trigger modal -->
+																	<!-- Button trigger modal -->
+																	
+
+																	<!-- Modal -->
+															
+
+																		<style >
+																		.bildirim {
+																			position: absolute;
+																			margin-left: 210px;
+																			margin-bottom: 180px;
+																		}
+
+																		#alarmIcon {
+																			color: red;
+																		}
+																	</style>
+
+
+
+																
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 																</div>
 
@@ -151,6 +210,10 @@
 			<section class="elementor-element elementor-element-3248def elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3248def" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 				<div class="elementor-container elementor-column-gap-default">
 					<div class="elementor-row">
+						@foreach (var item in Model.Doctors)
+						{
+							count++;
+						}
 						<div class="elementor-element elementor-element-1803300 elementor-column elementor-col-33 elementor-top-column" data-id="1803300" data-element_type="column">
 							<div class="elementor-column-wrap  elementor-element-populated">
 								<div class="elementor-widget-wrap">
@@ -159,16 +222,20 @@
 											<div class="elementor-counter">
 												<div class="elementor-counter-number-wrapper">
 													<span class="elementor-counter-number-prefix"></span>
-													<span class="elementor-counter-number" data-duration="500" data-to-value="3000" data-from-value="0" data-delimiter=",">0</span>
+													<span class="elementor-counter-number" data-duration="500" data-to-value="@count" data-from-value="0" data-delimiter=",">0</span>
 													<span class="elementor-counter-number-suffix">+</span>
 												</div>
-												<div class="elementor-counter-title">Doctors and growing!</div>
+												<div class="elementor-counter-title">Hekim ve Boyuyur!</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+						@foreach (var item1 in Model.Appointments)
+						{
+							appointmentCount++;
+						}
 						<div class="elementor-element elementor-element-d9b4e79 elementor-column elementor-col-33 elementor-top-column" data-id="d9b4e79" data-element_type="column">
 							<div class="elementor-column-wrap  elementor-element-populated">
 								<div class="elementor-widget-wrap">
@@ -177,16 +244,20 @@
 											<div class="elementor-counter">
 												<div class="elementor-counter-number-wrapper">
 													<span class="elementor-counter-number-prefix"></span>
-													<span class="elementor-counter-number" data-duration="500" data-to-value="200" data-from-value="0" data-delimiter=",">0</span>
+													<span class="elementor-counter-number" data-duration="500" data-to-value="@appointmentCount" data-from-value="0" data-delimiter=",">0</span>
 													<span class="elementor-counter-number-suffix">+</span>
 												</div>
-												<div class="elementor-counter-title">Clients (India, ME, Africa)</div>
+												<div class="elementor-counter-title">Xesteler</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+						@foreach (var item in Model.Hospital)
+						{
+							hospitalCount++;
+						}
 						<div class="elementor-element elementor-element-0cd69a4 elementor-column elementor-col-33 elementor-top-column" data-id="0cd69a4" data-element_type="column">
 							<div class="elementor-column-wrap  elementor-element-populated">
 								<div class="elementor-widget-wrap">
@@ -195,10 +266,10 @@
 											<div class="elementor-counter">
 												<div class="elementor-counter-number-wrapper">
 													<span class="elementor-counter-number-prefix"></span>
-													<span class="elementor-counter-number" data-duration="100" data-to-value="5" data-from-value="0">0</span>
+													<span class="elementor-counter-number" data-duration="100" data-to-value="@hospitalCount" data-from-value="0">0</span>
 													<span class="elementor-counter-number-suffix">M+</span>
 												</div>
-												<div class="elementor-counter-title">Appointments/Records Handled Annually</div>
+												<div class="elementor-counter-title">Saytimizda yer Alan Xestexanalar</div>
 											</div>
 										</div>
 									</div>
@@ -239,25 +310,18 @@
 											<div class="elementor-image-carousel-wrapper swiper-container" dir="ltr">
 												<div class="elementor-image-carousel swiper-wrapper">
 													@*///////////////////Xestexanalar bu hissede/////////////////////////////////////*@
-													<div class="swiper-slide"><figure class="swiper-slide-inner">
-															<img style="width:4cm;height:2.6cm" decoding="async" class="swiper-slide-image" src="https://seeklogo.com/images/H/hayat-hastanesi-logo-2A20C83496-seeklogo.com.png" alt="Apollo" />
+													@foreach (var item in Model.Hospital)
+													{
+														<div class="swiper-slide">
+														<figure class="swiper-slide-inner">
+															<img style="width:4cm;height:2.6cm" decoding="async" class="swiper-slide-image" src="~/RootAllPictures/img/@item.ImagePath" alt="@item.Name" />
 														</figure>
 													</div>
+													}
+													
 														
 
-													<div class="swiper-slide"><figure class="swiper-slide-inner">
-															<img style="width:4cm;height:2.6cm" decoding="async" class="swiper-slide-image" src="https://seeklogo.com/images/H/hayat-hastanesi-logo-2A20C83496-seeklogo.com.png" alt="Apollo" />
-														</figure>
-													</div>
-													<div class="swiper-slide"><figure class="swiper-slide-inner">
-															<img style="width:4cm;height:2.6cm" decoding="async" class="swiper-slide-image" src="https://seeklogo.com/images/H/hayat-hastanesi-logo-2A20C83496-seeklogo.com.png" alt="Apollo" />
-														</figure>
-													</div>
-													<div class="swiper-slide">
-														<figure class="swiper-slide-inner">
-															<img style="width:4cm;height:2.6cm" decoding="async" class="swiper-slide-image" src="https://seeklogo.com/images/H/hayat-hastanesi-logo-2A20C83496-seeklogo.com.png" alt="Apollo" />
-														</figure>
-													</div>
+													
 														</div>
 												<div class="swiper-pagination"></div>
 											</div>

@@ -1,19 +1,58 @@
 using Hospital_Template.DAL;
+using Hospital_Template.Models;
+using Hospital_Template.Models.Auth;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+                            .AddEntityFrameworkStores<AppDbContext>()
+                            .AddDefaultTokenProviders();
 
+
+
+builder.Services.Configure<IdentityOptions>(opt =>
+{
+    opt.Password.RequiredLength = 8;
+    opt.Password.RequireNonAlphanumeric = true;
+    opt.Password.RequireDigit = true;
+    opt.Password.RequireLowercase = true;
+    opt.Password.RequireUppercase = true;
+
+    opt.User.RequireUniqueEmail = true;
+
+    opt.Lockout.MaxFailedAccessAttempts = 3;
+    opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
+    opt.Lockout.AllowedForNewUsers = true;
+});
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+// Startup.cs içinde ConfigureServices metodu
+builder.Services.AddScoped<EmailService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
 	//options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+
 	options.UseSqlServer(builder.Configuration["ConnectionStrings:Default"]);
+	options.EnableSensitiveDataLogging(); // Bu satýrý ekleyin
 
 });
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+	var serviceProvider = scope.ServiceProvider;
+	var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+	if (!await roleManager.RoleExistsAsync("USER"))
+	{
+		await roleManager.CreateAsync(new IdentityRole("USER"));
+	}
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -25,10 +64,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthentication();
+
+
 
 app.UseEndpoints(endpoints =>
 {

@@ -1,0 +1,22 @@
+﻿@using Hospital_Template.ViewModel;
+@model DoctorCreateVM
+
+
+
+<h2>Randevu Ekle</h2>
+
+<div class="card-body">
+    <form class="forms-sample" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label asp-for="DoctorTime"></label>
+            <input asp-for="DoctorTime" class="form-control" asp-format="DataTime">
+            <span asp-validation-for="DoctorTime"></span>
+        </div>
+      
+        </form>
+        </div>
+
+    <button type="submit" class="btn btn-primary">Randevu Oluştur</button>
+
+
+

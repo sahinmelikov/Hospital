@@ -59,7 +59,13 @@
                                     <i class="mdi mdi-magnify"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+
+                            <form action="/Search/Search" method="get" class="search  btn-inp">
+                                <div class="input-group">
+                                    <span class="input-group-text srch_span_mob pe-0"><i class="bi bi-search"></i></span>
+                                    <input type="text" class="form-control inpp srch_mob" name="q" placeholder="Necə bir şey axtarırsınız..." value="">
+                                </div>
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -197,40 +203,40 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a asp-controller="Doctors" asp-action="Index" class="nav-link">
+                        <a asp-controller="Hospital" asp-action="Index" class="nav-link">
                             <i class="mdi mdi-home menu-icon"></i>
-                            <span class="menu-title">Hekimlerimiz</span>
+                            <span class="menu-title">DoctorPasient</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                   @* <li class="nav-item">
+                        <a asp-controller="Hospital" asp-action="Index" class="nav-link" data-bs-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic">
                             <i class="mdi mdi-circle-outline menu-icon"></i>
                             <span class="menu-title">Hekimlerimiz</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-controller="ParentsMenu" asp-action="Index">Xestexanana 1</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="Hospital" asp-action="Index">Xestexanana 1</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-controller="Model" asp-action="Index">Xestexna 2</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li>*@
                     <li class="nav-item">
-                        <a asp-controller="Featurress" asp-action="Index" class="nav-link">
+                        <a asp-controller="Hospital" asp-action="HospitalUpper" class="nav-link">
                             <i class="mdi mdi-view-headline menu-icon"></i>
-                            <span class="menu-title">Features</span>
+                            <span class="menu-title">XestexanalarYukle</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Slider" asp-action="Index">
+                        <a class="nav-link" asp-controller="Doctor" asp-action="DoctorUpper">
                             <i class="mdi mdi-chart-pie menu-icon"></i>
-                            <span class="menu-title">Slider</span>
+                            <span class="menu-title">HekimlerYukle</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/admin/template/pages/tables/basic-table.html">
+                        <a class="nav-link" asp-action="Index" asp-controller="Position">
                             <i class="mdi mdi-grid-large menu-icon"></i>
-                            <span class="menu-title">Tables</span>
+                            <span class="menu-title">Position Ekle</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -266,12 +272,12 @@
             <!-- partial -->
             @RenderBody()
             <!-- partial:partials/_footer.html -->
-            <footer class="footer">
+           @* <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
                     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
                 </div>
-            </footer>
+            </footer>*@
             <!-- partial -->
         </div>
         <!-- main-panel ends -->

@@ -1,0 +1,63 @@
+﻿@using Hospital_Template.ViewModel;
+@model HomeVM
+<style>
+    .cartt {
+        width: 120px;
+        height: 170px;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25rem;
+    }
+
+        .cartt:hover {
+            transform: scale(1.1);
+            transition: 0.2s;
+            color: blue;
+        }
+
+    .h100 {
+        height: 100vh;
+        width: 100%;
+        background-color: #dcdcdc;
+    }
+</style>
+
+
+
+
+<div class=" h100 d-flex justify-content-center align-items-center ">
+
+    <div class="d-flex flex-row gap-3">
+        @foreach (var item in Model.Doctors)
+        {
+            <div class="d-flex flex-column">
+                <a asp-route-id="@item.Id" asp-controller="DoctorPasient" asp-action="Index">
+                    <div class="cartt d-flex flex-column">
+                        <img class="w-100 h-50" src="~/RootAllPictures/img/@item.ImagePath" alt="">
+                        <p>@item.Name</p>
+                    </div>
+                </a> 
+               @foreach (var appointment in item.Appointments)
+                {
+                    if (appointment.AppointmentDateTime==null)
+                    {
+                        <span style="background-color:red;position:absolute;z-index:auto;">Bildirim</span>
+                    }
+                    else
+                    {
+                        <span></span>
+                    }
+                    
+                }
+                
+            </div>
+           
+        }
+    </div>
+
+
+
+</div>
+

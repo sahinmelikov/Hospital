@@ -4,6 +4,7 @@
 	{
         public int Id { get; set; }
 		public string Position { get; set; }	
+		public bool IsDeleted { get; set; }
 		public List<Doctor>Doctors { get; set; }
 	
     }
