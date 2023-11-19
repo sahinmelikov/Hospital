@@ -1,0 +1,538 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from 195.175.45.150:7070/randevu/appointment_check_cancel.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 16:45:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+﻿    <title>HAYAT HASTANESİ</title>
+    
+    <meta name="viewport" content="width=550">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="randevu, hastane" />
+    <meta name="description" content="HAYAT HASTANESİ" />
+    <meta name="robots" content="index,follow" />
+    <meta name="Author" content="Sinerji Bilisim" />
+    <meta name="Developer" content="Sinerji Bilisim" />
+    
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    
+    <script src="js/common.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/mask.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/zebra_datepicker.js"></script>
+    <script>
+		var number_elements = ['fr_identity_no', 'fr_birth_date', 'fr_upn', 'fr_mobile_phone', 'fr_home_phone', 'fr_work_phone', 'fr_verification_code'];
+		var letter_elements = ['fr_name', 'fr_surname', 'fr_father_name', 'fr_mother_name'];
+		
+		var special_keys = [8, 9, 13, 16, 17, 18, 20, 37, 39, 46, 144];
+		var number_keys  = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
+		var letter_keys  = [65, 66, 67, 220, 68, 69, 70, 71, 219, 72, 73, 222, 74, 75, 76, 77, 78, 79, 191, 80, 81, 82, 83, 186, 84, 85, 221, 86, 87, 88, 89, 90, 32, 190];
+		var numbers      = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+		var letters      = ['A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'O', 'Ö', 'P', 'Q', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'W', 'X', 'Y', 'Z', ' ', '.'];
+		
+		var num_msg = 'Yalnızca rakam giriniz!';
+		var char_msg = 'Yalnızca harf giriniz!';
+		
+		function show_warning(element, msg) {
+			$('#errmsg').css('top', $(element).offset().top - $('#main_div').offset().top);
+			$('#errmsg').html(msg).show().fadeOut('slow');
+		}
+		
+		function check_date(which) {//KULLANILMIYOR
+			if(which < 48 || which > 57) return false;
+			
+			var now = new Date;
+			var year = now.getFullYear();
+			var month = now.getMonth() + 1;
+			var day = now.getDate();
+			var old_year = year - 120;
+			var y1 = Math.floor(year / 1000);
+			var y2 = Math.floor(year / 100);
+			var y3 = Math.floor(year / 10);
+			var o1 = Math.floor(old_year / 1000);
+			var o2 = Math.floor(old_year / 100);
+			var o3 = Math.floor(old_year / 10);
+			
+			if($('#fr_birth_date').val().length == 0) {
+				if(which < 48 || which > 51) return false;
+			}
+			if($('#fr_birth_date').val().length == 1 && $('#fr_birth_date').val()[0] == '0') {
+				if(which < 49 || which > 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 1 && $('#fr_birth_date').val()[0] == '3') {
+				if(which < 48 || which > 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 3) {
+				if(which < 48 || which > 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 49 || which > 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[3] == '1') {
+				if(which < 48 || which > 50) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[0] == '3' && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 48 || which > 57 || which == 50) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val().substr(0, 2) == '31' && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 48 || which > 57 || which == 50 || which == 52 || which == 54 || which == 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val().substr(0, 2) == '31' && $('#fr_birth_date').val()[3] == '1') {
+				if(which < 48 || which > 57 || which == 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 6) {
+				if(which - 48 != o1 && which - 48 != y1) return false;
+			}
+			if($('#fr_birth_date').val().length == 7) {
+				var c2 = $('#fr_birth_date').val().substr(6, 1) + (which - 48);
+				if(c2 < o2 || c2 > y2) return false;
+			}
+			if($('#fr_birth_date').val().length == 8) {
+				var c3 = $('#fr_birth_date').val().substr(6, 2) + (which - 48);
+				if(c3 < o3 || c3 > y3) return false;
+			}
+			if($('#fr_birth_date').val().length == 9) {
+				var c4 = $('#fr_birth_date').val().substr(6, 3) + (which - 48);
+				if(c4 < old_year || c4 > year) return false;
+				if(c4 == year && parseInt($('#fr_birth_date').val().substr(3, 2)) > month) return false;
+				if(c4 == year && parseInt($('#fr_birth_date').val().substr(3, 2)) == month && parseInt($('#fr_birth_date').val().substr(0, 2)) > day) return false;
+				if($('#fr_birth_date').val().substr(0, 5) == '29.02' && c4 % 4 > 0) return false;
+			}
+			
+			return true;
+		}
+		
+		$(document).ready(function() {
+			$('input').keyup(function(e) {
+				//input type date olarak değiştirildi kontrole gerek kalmadı
+				if (e.target.getAttribute("name") != "fr_birth_date")
+				{
+					$(e.target).val($(e.target).val().replace("ı","I").replace("i","İ").toUpperCase());
+					
+					if(($(e.target).attr('id') == 'fr_identity_no' && $('#fr_identity_no').val().length == 11) || ($(e.target).attr('id') == 'fr_birth_date' && $('#fr_birth_date').val().length == 10)) {
+						$(":input")[$(":input").index(document.activeElement) + 1].focus();
+					}
+				}
+			});
+			
+			$('input').keydown(function(e) {
+				if(number_elements.indexOf($(e.target).attr('id')) >= 0) {
+					if(number_keys.indexOf(e.which) == -1 && special_keys.indexOf(e.which) == -1) {
+						show_warning(e.target, num_msg);
+						return false;
+					}
+				} else if(letter_elements.indexOf($(e.target).attr('id')) >= 0) {
+					if(letter_keys.indexOf(e.which) == -1 && special_keys.indexOf(e.which) == -1) {
+						show_warning(e.target, char_msg);
+						return false;
+					}
+				}
+				
+			//	if(letter_keys.indexOf(e.which) >= 0 && $(e.target).attr('id') != 'fr_email') {
+			//		$(e.target).val($(e.target).val() + letters[letter_keys.indexOf(e.which)]);
+			//		return false;
+			//	}
+			});
+			//input type date olarak değiştirildi kontrole gerek kalmadı
+			$('#fr_birth_date2').keypress(function(e) {
+				return check_date(e.which);
+			});
+			
+			//$('#fr_identity_no').mask('99999999999');
+			//$('#fr_birth_date').mask('99.99.9999');
+			$('#fr_mobile_phone').mask('(999) 999 99 99');
+			$('#fr_home_phone').mask('(999) 999 99 99');
+			$('#fr_work_phone').mask('(999) 999 99 99');
+			
+			$('#fr_birth_date2').keydown(function(e) {
+				if(e.which != 8 && e.which != 46) {
+					if($('#fr_birth_date').val().length == 2 || $('#fr_birth_date').val().length == 5) $('#fr_birth_date').val($('#fr_birth_date').val() + '.');
+				}
+			});
+			
+			$('#fr_birth_date2').keyup(function(e) {
+				if(e.which != 8 && e.which != 46) {
+					if($('#fr_birth_date').val().length == 2 || $('#fr_birth_date').val().length == 5) $('#fr_birth_date').val($('#fr_birth_date').val() + '.');
+				}
+			});
+			
+
+			//$('#fr_birth_date').Zebra_DatePicker();
+			
+			var myTimer = setInterval(function() { $('#selected').fadeToggle('slow'); }, 1000);
+			
+			$('#main_table').css('width', $(window).width() - 33);
+		});
+		
+		$(window).resize(function() {
+			$('#main_table').css('width', $(window).width() - 33);
+		});
+		
+		function get_alert_message(param, value) {
+			$.ajaxSetup({ async: false });
+			var choice = true;
+			$.getJSON('get_alert_message5a85.html?type=1&amp;param=' + param + '&value=' + value,
+				function(data) {
+					if(data.Rows) {
+						for(var i = 0; i < data.Rows.length; i++) {
+							var rowData = data.Rows[i];
+							if(!window.confirm(rowData.message.replaceAll('~', '\r'))) {
+								i = data.Rows.length;
+								choice = false;
+							}
+						}
+					}
+				}
+			);
+			return choice;
+		}
+    </script>
+        <script>
+		function reload_captcha() {
+			document.getElementById('imgcaptcha').src = 'captchad41d.png?' + Date();
+			$('#fr_secure_code').val('');
+			$('#fr_secure_code').focus();
+		}
+		
+		function set_query_type(sms) {
+			if(sms) {
+				$('#sms').prop('checked', 'checked');
+				$('#app_code').slideUp();
+				$('#fr_app_code').val('');
+				var query_type = 1;
+			} else {
+				$('#code').prop('checked', 'checked');
+				$('#app_code').slideDown();
+				var query_type = 0;
+			}
+			$('#fr_identity_no').focus();
+			
+			$.getJSON('set_variables677b.html?vars=query_type&amp;vals=' + query_type);
+		}
+		
+		function tcno_checksum(tc) {
+			if(((parseInt(tc[0]) + parseInt(tc[2]) + parseInt(tc[4]) + parseInt(tc[6]) + parseInt(tc[8])) * 7 + (parseInt(tc[1]) + parseInt(tc[3]) + parseInt(tc[5]) + parseInt(tc[7])) * 9) % 10 != parseInt(tc[9])) return false;
+			if((parseInt(tc[0]) + parseInt(tc[2]) + parseInt(tc[4]) + parseInt(tc[6]) + parseInt(tc[8])) * 8 % 10 != parseInt(tc[10])) return false;
+			if((parseInt(tc[0]) + parseInt(tc[1]) + parseInt(tc[2]) + parseInt(tc[3]) + parseInt(tc[4]) + parseInt(tc[5]) + parseInt(tc[6]) + parseInt(tc[7]) + parseInt(tc[8]) + parseInt(tc[9])) % 10 != parseInt(tc[10])) return false;
+			return true;
+		}
+		
+		function send_identity_info() {	
+			if($('#fr_identity_no').val() == '' && $('#hd_patient_type').val() == '0' ) {
+				alert(txt14[pt]);
+				document.getElementById('fr_identity_no').focus();
+				return false;
+			} else if(!tcno_checksum($('#fr_identity_no').val()) && $('#hd_patient_type').val() == '0' ) {
+				alert(txt15[pt]);
+				document.getElementById('fr_identity_no').focus();
+				return false;
+			}else if($('#fr_passport').val() == '' && $('#hd_patient_type').val() == '1' ) {
+				alert(txt22[pt]);
+				$('#fr_passport').focus();
+				return false;
+			}else if($('#fr_father_name').val() == '') {
+				alert(txt16[pt]);
+				document.getElementById('fr_father_name').focus();
+				return false;
+			} else if($('#fr_birth_date').val() == '') {
+				alert(txt17[pt]);
+				document.getElementById('fr_birth_date').focus();
+				return false;
+			} else if($('#code').is(':checked') && $('#fr_app_code').val() == '') {
+				alert(txt35[pt]);
+				document.getElementById('fr_app_code').focus();
+				return false;
+			} else if($('#fr_secure_code').val() == '') {
+				alert(txt19[pt]);
+				document.getElementById('fr_secure_code').focus();
+				return false;
+			} else {
+				var formdata = $('#form1').serialize();
+				$.getJSON('find_patientd41d.html?' + formdata,
+					function(data){
+						if(data.Rows) {
+							rowData = data.Rows[0];
+							if(rowData.secure_pass == 0) {
+								alert(txt20[pt]);
+							} else if(rowData.upn == 0) {
+								alert(txt21[pt]);
+								reload_captcha();
+							} else {
+								if($('#sms').is(':checked')) {
+									$.getJSON('get_phone_numbers.html',
+									function(data) {
+										if(data.Rows) {
+											if(data.Rows.length > 0) {
+												var content = '';
+												if(data.Rows.length > 1) {
+													content = '<option value=""> '+ txt12[pt] + '</option>';
+												}
+												for(var i = 0; i < data.Rows.length; i++) {
+													rowData = data.Rows[i];
+													content += '<option id="fr_phone_number_' + rowData.id + '" value="' + rowData.id + '">' + rowData.phone_number + '</option>';
+												}
+												if(data.Rows.length == 1) {
+													$('#fr_phone_number_view').val(rowData.phone_number);
+												}
+												$('#fr_phone_number').html(content);
+												
+												$('#identity_info').slideUp('slow', function() { $('#phone_numbers').slideDown('slow'); });
+											} else {
+												alert(txt36[pt]);
+											}
+										}
+									});
+								} else {
+									document.location.href="appointment.html";
+								}
+							}
+						}
+					}
+				);
+			}
+		}
+		
+		function send_phone_number() {
+			if($('#fr_phone_number').val() == '') {
+				alert(txt37[pt]);
+				document.getElementById('fr_phone_number').focus();
+				return false;
+			} else {
+				$.getJSON('send_sms6fed.html?pn_id=' + $('#fr_phone_number').val(),
+					function(data) {
+						rowData = data.Rows[0];
+						if(rowData.status > 0) {
+							$('#phone_numbers').slideUp('slow', function() { $('#verification_code').slideDown('slow', function() { document.getElementById('fr_verification_code').focus(); }); });
+						} else {
+							alert(txt39[pt]);
+						}
+					}
+				);
+			}
+		}
+		
+		function send_verification_code() {
+			if($('#fr_verification_code').val() == '') {
+				alert(txt25[pt]);
+				document.getElementById('fr_verification_code').focus();
+				return false;
+			} else {
+				$.getJSON('check_verification_code74af.html?fr_verification_code=' + $('#fr_verification_code').val(),
+					function(data) {
+						if(data.Rows) {
+							rowData = data.Rows[0];
+							if(rowData.verified == 1) {
+								document.location.href="appointment.html";
+							} else if(rowData.verified == 0) {
+								alert(txt26[pt]);
+								document.getElementById('fr_verification_code').focus();
+							} else {
+								alert(txt27[pt]);
+								document.location.href="appointment_check_cancel.html";
+							}
+						}
+					}
+				);
+			}
+		}
+		
+		function on_focus(obj) {
+			$('#' + obj + '_view').attr('style', 'display:none;');
+			$('#' + obj).attr('style', 'display:block; padding-left:10px;');
+			$('#' + obj).focus();
+		}
+		
+		function on_blur(obj) {
+			$('#' + obj).attr('style', 'display:none;');
+			$('#' + obj + '_view').attr('style', 'display:block;');
+		}
+		
+		function on_change(obj) {
+			$('#' + obj + '_view').val($('#' + obj + '_' + $('#' + obj).val()).html());
+			on_blur(obj);
+		}
+    </script>
+  </head>
+  <body>
+    <table id="main_table" width="99%" align="left" border="0">
+      <tr>
+        <td>
+          <table align="center" border="0">
+﻿            <tr>
+              <td width="10"></td>
+              <td align="center"><a href="index.html"><img src="images/hospital_logo.png" width="250" /></a></td>
+              <td width="10"></td>
+            </tr>
+            <tr style="height:27px;">
+              <td></td>
+              <td align="center" style="width:490px;"><div class="shadow_top"></div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="center" valign="middle" style="width:490px;">
+                <form name="form1" id="form1" action="#" enctype="multipart/form-data" method="post">
+				<input type="hidden" id="hd_patient_type" name="hd_patient_type" value="0" />
+                  <div id="main_div" style="position:relative; width:420; padding:5px 0px 5px 0px;">
+                    <div id="errmsg" class="warning" style="display:none;"></div>
+                    <div id="identity_info" class="content">
+                      <div class="info_line" style="height:10px;"></div>
+                      <div id="dl_tc" class="info_line">
+                        <div id="dt_tc" class="info_title">T.C. Kimlik No</div>
+                        <div class="info_input1"><input type="text" id="fr_identity_no" name="fr_identity_no" maxlength="11" class="input1" autofocus /></div>
+                      </div>
+					  <div id="dl_passport" class="info_line">
+                        <div id="dt_p" class="info_title">Pasaport No</div>
+                        <div class="info_input1"><input type="text" id="fr_passport" name="fr_passport" maxlength="30" class="input1" autofocus /></div>
+                      </div>
+                      <div class="info_line">
+                        <div id="dt_fn" class="info_title">Baba Adı</div>
+                        <div class="info_input1"><input type="text" id="fr_father_name" name="fr_father_name" maxlength="20" class="input1" /></div>
+                      </div>
+                      <div class="info_line">
+                        <div id="dt_bd" class="info_title">Doğum Tarihi</div>
+                        <div class="info_input1"><input type="date" id="fr_birth_date" name="fr_birth_date" class="input1" min="1-01-1900" max="1-01-2300"></div>
+                      </div>
+                      <div id="app_code" class="info_line">
+                        <div id="dt_ac" class="info_title">Randevu Kodu</div>
+                        <div class="info_input1"><input type="text" id="fr_app_code" name="fr_app_code" class="input1" /></div>
+                      </div>
+                      <div class="info_line">
+                        <div class="info_title"><img src="captcha.png" width="90" height="40" style="" id="imgcaptcha" /></div>
+                        <div class="info_input1"><input type="text" id="fr_secure_code" name="fr_secure_code" class="input1" placeholder="Güvenlik Kodunu Giriniz" /></div>
+                        <div><img src="images/refresh_button.png" style="width:40px; height:40px; cursor:pointer;" title="Yenile" onClick="reload_captcha();" /></div>
+                      </div>
+                      <div class="info_line">
+                        <div id="dt_cont2" class="info_input3" title="Devam" onClick="send_identity_info();">Devam</div>
+                      </div>
+                    </div>
+                    <div id="phone_numbers" class="content" style="display:none">
+                      <div class="info_line" style="height:10px;"></div>
+                      <div class="info_line">
+                        <div id="dt_mf" class="info_title">Cep Telefonu</div>
+                        <div class="info_input1">
+                          <input type="text" id="fr_phone_number_view" name="fr_phone_number_view" class="input1" placeholder="Lütfen Seçiniz..." style="display:block;" onFocus="on_focus('fr_phone_number');" />
+                          <select id="fr_phone_number" name="fr_phone_number" class="input1" style="display:none;" onChange="on_change('fr_phone_number');" onBlur="on_blur('fr_phone_number');">
+                          </select>
+                        </div>
+                      </div>
+                      <div class="info_line">
+                        <div id="btn_cont" class="info_input3" title="Devam" onClick="send_phone_number();">Devam</div>
+                      </div>
+                    </div>
+                    <div id="verification_code" class="content" style="display:none">
+                      <div class="info_line" style="height:10px;"></div>
+                      <div class="info_line">
+                        <div id="dt_vc" class="info_title">Doğrulama Kodu</div>
+                        <div class="info_input1"><input type="text" id="fr_verification_code" name="fr_verification_code" class="input1" /></div>
+                      </div>
+                      <div class="info_line">
+                        <div id="dt_continue" class="info_input3" title="Devam" onClick="send_verification_code();">Devam</div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </td>
+              <td></td>
+            </tr>
+            <tr style="height:25px;">
+              <td></td>
+              <td align="center" style="width:490px;"><div class="shadow_bottom"></div></td>
+              <td></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+<script>
+	pt = 0
+	var txt01 = ['Dosya No', 'File Number'];
+	var txt02 = ['Pasaport No', 'Passport No'];
+	var txt03 = ['T.C. Kimlik No', 'Identity No'];
+	var txt04 = ['Baba Adı', 'Father Name'];
+	var txt05 = ['Doğum Tarihi', 'Birth Date'];
+	var txt06 = ['Dosya No', 'File Number'];
+	var txt07 = ['Güvenlik Kodunu Giriniz', 'Enter Security Code'];
+	var txt08 = ['Yenile', 'Refresh'];
+	var txt09 = ['Devam', 'Continue'];
+	var txt10 = ['Devam', 'Continue'];
+	var txt11 = ['Cep Telefonu', 'Cell Phone'];
+	var txt12 = ['Lütfen Seçiniz ...', 'Please Choice ...'];
+	var txt14 = ['T.C. Kimlik No boş bırakılamaz!', 'Identity No can not be left blank!'];
+	var txt15 = ['T.C. Kimlik No doğrulanmadı!', 'Identity No not verified!'];
+	var txt16 = ['Baba Adı boş bırakılamaz!', 'Father Name can not be left blank!'];
+	var txt17 = ['Doğum Tarihi boş bırakılamaz!', 'Birth Date can not be left blank!'];
+	var txt18 = ['Dosya No boş bırakılamaz veya \'0\' olamaz!', 'File Number can not be left blank or can not be \'0\'!'];
+	var txt19 = ['Güvenlik Kodu boş bırakılamaz!', 'Security Code can not be left blank!'];
+	var txt20 = ['Güvenlik Kodu eşleşmedi!\nLütfen kontrol edip, tekrar deneyiniz.', 'Security Code does not match!\nPlease check and try again.'];
+	var txt21 = ['Girdiğiniz verilere uygun kayıt bulunamadı!\nLütfen kontrol edip, tekrar deneyiniz.', 'No record was found for your entry!\nPlease check and try again.'];
+	var txt22 = ['Passport No boş bırakılamaz!', 'Passport No can not be left blank!'];
+	var txt25 = ['Doğrulama Kodu boş bırakılamaz!', 'Verification Code can not be left blank!'];
+	var txt26 = ['Doğrulama Kodu eşleşmedi!\nLütfen kontrol edip tekrar deneyiniz.', 'Verification Code does not match!\nPlease check and try again.'];
+	var txt27 = ['Hatalı Giriş Sınırı aşıldı!\nLütfen yeni bir Doğrulama Kodu ile tekrar deneyiniz.', 'Bad Entry Limit exceeded!\nPlease try again with a new Verification Code.'];
+	var txt28 = ['Pasaport Numarası boş bırakılamaz!', 'Passport No can not be left blank!'];
+	var txt29 = ['Pasaport Numarası doğrulanmadı!', 'Passport No not verified!'];
+	var txt30 = ['Girdiğiniz kimlik bilgileri tutarsız.\nLütfen tekrar giriniz.', 'The credentials you entered are inconsistent.\nPlease re-enter'];
+	var txt31 = ['Girdiğiniz güvenlik kodu hatalı.\nLütfen tekrar giriniz.', 'The security code is incorrect.\nPlease re-enter.'];
+
+	var txt32 = ['Devam' , 'Continue'];
+	var txt33 = ['Randevu Kodu' , 'App Code'];
+	var txt34 = ['SMS ile Doğrulama' , 'Verification by SMS '];
+
+	var txt35 = ['Randevu Kodu boş bırakılamaz!', 'Appointment Code can not be left blank!'];
+	var txt36 = ['Dosyanızda herhangi bir cep telefonu numarası bulunamadı!', 'No mobile number found in your file !'];
+	var txt37 = ['Cep Telefonu boş bırakılamaz!', 'Mobile Phone can not be left blank!'];
+
+	var txt38 = ['Doğrulama Kodu', 'Verification Code'];
+	var txt39 = ['SMS gönderilemedi!\nLütfen tekrar deneyiniz.', 'Failed to send SMS!\nPlease try again.'];
+
+	$('#dt_cont').html(txt32[pt]);
+	$('#dt_continue').html(txt32[pt]);
+	$('#dt_cont2').html(txt32[pt]);
+	$('#btn_cont').html(txt32[pt]);
+
+	$('#dt_mf').html(txt11[pt]);
+	$('#dt_vc').html(txt38[pt]);
+
+	$('#code').html(txt33[pt]);
+	$('#dt_ac').html(txt33[pt]);
+	$('#sms').html(txt34[pt]);
+
+	$('#app_codes').html(txt33[pt]);
+	$('#sms_ver').html(txt34[pt]);
+
+	$('#dt_tc').html(txt03[pt]);
+	$('#dt_fn').html(txt04[pt]);
+	$('#dt_bd').html(txt05[pt]);
+	$('#dt_upn').html(txt06[pt]);
+	$('#dt_pp').html(txt02[pt]);
+
+	$('#fr_secure_code').attr('placeholder', txt07[pt]);
+
+	if (pt == 1)
+	{
+		$('#dl_tc').hide();
+		$('#dl_passport').show();
+		$('#hd_patient_type').val('1');
+	}
+	else
+	{
+		$('#dl_tc').show();
+		$('#dl_passport').hide();
+		$('#hd_patient_type').val('0');
+	}
+
+	$(document).ready(function() {
+			$('input').attr('autocomplete', 'off');
+		});
+</script>
+
+  </body>
+
+<!-- Mirrored from 195.175.45.150:7070/randevu/appointment_check_cancel.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 16:45:30 GMT -->
+</html>

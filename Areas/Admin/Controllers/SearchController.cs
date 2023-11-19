@@ -1,10 +1,13 @@
 ﻿using Hospital_Template.DAL;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Hospital_Template.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Maderator")]
     public class SearchController : Controller
     {
         private readonly AppDbContext _dbContext;

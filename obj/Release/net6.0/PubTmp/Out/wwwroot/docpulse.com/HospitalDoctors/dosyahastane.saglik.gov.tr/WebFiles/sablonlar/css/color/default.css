@@ -1,0 +1,111 @@
+header.smaller .header-bottom,
+.header-bottom,
+.icon_boxed_city_middle img,
+.mobil_baglantilar li a img,
+.main_widget_header,
+.background-tab img,
+.h-line,
+.listed-date li a span,
+.search-bg,
+.mega-menu-link-more,
+.menu-lang-read-more,
+.owl-carousel .owl-nav div:hover,
+.owl-dots .owl-dot.active span,.owl-dots .owl-dot:hover span,
+.owl-dots .owl-dot.active,
+#search-blog .btn, 
+a#scrollUp, 
+.page-left-sidebar .listed li a.active,
+.page-list-menu li a.active,
+.page-list-menu li a.active:hover,
+/* .klinik a, */
+.sayfalandirici li a.sayfalandirici_aktifsayfa,
+#post-services .post-services-item-header,
+.btn-primary,
+.tab-item-box-header,
+.social-networks li a i, 
+.left-headline .card .card-header,
+#mobile-footer
+{
+	background:#31649b;  
+}
+
+ .klinik a {
+	background:#fff;  
+}
+
+
+
+/* Tasarım 4 **/
+#thumbs .current .item {
+	border:3px solid #31649b;	color:#444
+}
+
+.btn-primary {
+	border-color: #31649b;
+}
+
+		#main-slider-full .slider-desc-center { 
+			border-top: 6px solid  rgba(37, 86, 140, 0.88) 
+		}
+
+		#main-slider-full .slider-desc-center.black { 
+			background: rgba(0, 0, 0, 0.23); 
+		}
+			
+		#main-slider-full .slider-desc-center.white { 
+			background: rgba(255, 255, 255, 0.73); 
+		}
+		
+	
+#saglikhaberler_listesi { 
+	scrollbar-color: #31649b #d2d2d2; 
+}		
+		
+.background-tab .hc-overlay {
+	background: rgba(41, 131, 230, 0.88)
+}
+
+.background-tab-content .nav-link {
+   border:1px solid rgba(255, 255, 255, 0.28);  
+}
+
+
+
+#mainMenu nav > ul > li > a { 
+    border-right: 1px solid #25568b;
+}
+
+#mainMenu nav>ul>li>a:hover {
+	background:#0743b9; color:#fff
+} 
+
+
+footer {
+	background: url(../../images/bg-footer.png) no-repeat center bottom #0b2a4d; 
+}
+	
+footer h3::after {
+	background: #25568b;
+}
+footer .list-icon li a, footer p {
+    color: #e0f4ff;
+}
+ 
+.footer_text i {
+	color: #3b7eff;
+}
+
+.klinik h6 {
+	border-top:1px solid #f2f2f2; 
+}
+
+.social-mobiles li a i, 
+.social-network li a i,
+#mobile-footer .social-mobiles li a i, #mobile-footer  .social-network li a i
+{
+	background:#0743b9
+}
+
+
+
+

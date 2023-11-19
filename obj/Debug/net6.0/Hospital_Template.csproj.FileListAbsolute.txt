@@ -71,6 +71,3 @@ C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template\bin\Debug\net6.0
 C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template\bin\Debug\net6.0\SendGrid.dll
-C:\Users\sahin\source\repos\Hospital_Template\Hospital_Template\bin\Debug\net6.0\StarkbankEcdsa.dll

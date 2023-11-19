@@ -1,0 +1,27 @@
+﻿@model DoctorViewModel
+
+<div class="card-body">
+    <form asp-controller="Home" asp-action="DoctorComment" class="forms-sample" enctype="multipart/form-data" method="post">
+
+        <div class="form-group">
+            <label asp-for="HospitalId"></label>
+            <select asp-for="DoctorId" class="form-control">
+                <option value="">Seçiniz</option>
+                @if (ViewBag.Doctor != null)
+                {
+                    foreach (SelectListItem doctor in ViewBag.Doctor)
+                    {
+                        <option value="@doctor.Value">@doctor.Text</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="DoctorId"></span>
+
+            <textarea asp-for="Comment" id="Comment" cols="30" rows="10" placeholder="Enter Message"></textarea>
+            <span style="color:red" asp-validation-for="Comment"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <button asp-controller="Home" asp-action="Index" class="btn btn-light">Cancel</button>
+    </form>
+</div>

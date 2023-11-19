@@ -821,10 +821,6 @@
       "PackagePath": "staticwebassets\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-bg_glass_95_fef1ec_1x400.png"
     },
     {
-      "Id": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-bg_highlight-soft_75_cccccc_1x100.png",
-      "PackagePath": "staticwebassets\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-bg_highlight-soft_75_cccccc_1x100.png"
-    },
-    {
       "Id": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-icons_222222_256x240.png",
       "PackagePath": "staticwebassets\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-icons_222222_256x240.png"
     },
@@ -1335,6 +1331,14 @@
     {
       "Id": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\AboutDoctor\\www.googletagmanager.com\\gtm5445.html",
       "PackagePath": "staticwebassets\\docpulse.com\\AboutDoctor\\www.googletagmanager.com\\gtm5445.html"
+    },
+    {
+      "Id": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\Contact\\css\\contact.css",
+      "PackagePath": "staticwebassets\\docpulse.com\\Contact\\css\\contact.css"
+    },
+    {
+      "Id": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\Contact\\css\\services.css",
+      "PackagePath": "staticwebassets\\docpulse.com\\Contact\\css\\services.css"
     },
     {
       "Id": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\HospitalDoctors\\ankarasehir.saglik.gov.tr\\Fonts\\font-awesome.css",

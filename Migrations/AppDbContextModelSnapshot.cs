@@ -134,6 +134,35 @@ namespace Hospital_Template.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Hospital_Template.Models.Comement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CommentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CommentText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("Hospital_Template.Models.Doctor", b =>
                 {
                     b.Property<int>("Id")
@@ -382,6 +411,17 @@ namespace Hospital_Template.Migrations
                     b.Navigation("Doctor");
                 });
 
+            modelBuilder.Entity("Hospital_Template.Models.Comement", b =>
+                {
+                    b.HasOne("Hospital_Template.Models.Doctor", "Doctor")
+                        .WithMany("Comements")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+                });
+
             modelBuilder.Entity("Hospital_Template.Models.Doctor", b =>
                 {
                     b.HasOne("Hospital_Template.Models.DoctorPosition", "doctorPosition")
@@ -455,6 +495,8 @@ namespace Hospital_Template.Migrations
             modelBuilder.Entity("Hospital_Template.Models.Doctor", b =>
                 {
                     b.Navigation("Appointments");
+
+                    b.Navigation("Comements");
                 });
 
             modelBuilder.Entity("Hospital_Template.Models.DoctorPosition", b =>

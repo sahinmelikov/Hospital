@@ -1,0 +1,27 @@
+﻿@*@{
+    Layout = null; // Bu dosyanın bir layout'a ihtiyacı yok
+}
+
+@model string
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Notification</title>
+</head>
+<body>
+    <h2>Hospital Online Randevu Sitesine Giriş Bildirimi</h2>
+    <p>Sayın kullanıcı, Hospital Online Randevu Sitesi'ne giriş yapıldı. Bu siz misiniz?</p>
+
+    <form action="https://hospitalonlinerandevu.azurewebsites.net/Account/ConfirmLogin" method="post">
+        <input type="hidden" name="email" value="@Model" />
+        <button style="background-color:yellow;color:red" type="submit">Evet</button>
+    </form>
+
+    <form action="https://hospitalonlinerandevu.azurewebsites.net/Home/Index" method="post">
+        <input type="hidden" name="email" value="@Model" />
+        <button style="color:wheat;background-color:red;" type="submit">Hayır</button>
+    </form>
+</body>
+</html>*@
+

@@ -1,855 +1,859 @@
 ﻿@model HomeVM
 @{
-	double count = 0;
+    double count = 0;
 }
 @{
-	double appointmentCount = 0;
+    double appointmentCount = 0;
 }
 @{
-	double hospitalCount =0;
+    double hospitalCount = 0;
 }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
 <div data-elementor-type="wp-page" data-elementor-id="587" class="elementor elementor-587 bg-img" data-elementor-settings="[]">
-	<div class="elementor-inner">
-		<div class="elementor-section-wrap">
-			<section class="elementor-element elementor-element-73fe73d elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="73fe73d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-d5c4bfb elementor-column elementor-col-50 elementor-top-column" data-id="d5c4bfb" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<section class="elementor-element elementor-element-0ee08ce elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="0ee08ce" data-element_type="section">
-										<div class="elementor-container elementor-column-gap-default">
-											<div class="elementor-row">
-												<div class="elementor-element elementor-element-0c90e0d elementor-column elementor-col-100 elementor-inner-column" data-id="0c90e0d" data-element_type="column">
-													<div class="elementor-column-wrap  elementor-element-populated">
-														<div class="elementor-widget-wrap">
-															<div class="elementor-element elementor-element-2775ecf elementor-widget elementor-widget-heading" data-id="2775ecf" data-element_type="widget" data-widget_type="heading.default">
-																<div class="elementor-widget-container">
-																	<h1 class="elementor-heading-title elementor-size-default">Klinikanız/Xəstəxananız Üçün Onlayn Proqram Təminatı</h1>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-d6d6d03 elementor-widget elementor-widget-text-editor" data-id="d6d6d03" data-element_type="widget" data-widget_type="text-editor.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-text-editor elementor-clearfix">
-																		<p>
-																			OnlineHospital Clinic/Hospital Information Management System (HIMS) proqramı <br />
-																			həkimlər, klinikalar və xəstəxanalar üçün yüksək keyfiyyətli tibbi xidmət göstərməyə kömək edir.
-																		</p>
-																	</div>
-																</div>
-															</div>
-<style>
-																.cartt {
-																	width: 220px;
-																	height: 170px;
-																	background-color: #ccc;
-																	display: flex;
-																	align-items: center;
-																	justify-content: center;
-																	border-radius: 0.25rem;
-																}
+    <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+            <section class="elementor-element elementor-element-73fe73d elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="73fe73d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-d5c4bfb elementor-column elementor-col-50 elementor-top-column" data-id="d5c4bfb" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <section class="elementor-element elementor-element-0ee08ce elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="0ee08ce" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-default">
+                                            <div class="elementor-row">
+                                                <div class="elementor-element elementor-element-0c90e0d elementor-column elementor-col-100 elementor-inner-column" data-id="0c90e0d" data-element_type="column">
+                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                        <div class="elementor-widget-wrap">
+                                                            <div class="elementor-element elementor-element-2775ecf elementor-widget elementor-widget-heading" data-id="2775ecf" data-element_type="widget" data-widget_type="heading.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <h1 class="elementor-heading-title elementor-size-default">Klinikanız/Xəstəxananız Üçün Onlayn Proqram Təminatı</h1>
+                                                                </div>
+                                                            </div>
+                                                            <div class="elementor-element elementor-element-d6d6d03 elementor-widget elementor-widget-text-editor" data-id="d6d6d03" data-element_type="widget" data-widget_type="text-editor.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div class="elementor-text-editor elementor-clearfix">
+                                                                        <p>
+                                                                            OnlineHospital Clinic/Hospital Information Management System (HIMS) proqramı <br />
+                                                                            həkimlər, klinikalar və xəstəxanalar üçün yüksək keyfiyyətli tibbi xidmət göstərməyə kömək edir.
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <style>
+                                                                .cartt {
+                                                                    width: 220px;
+                                                                    height: 170px;
+                                                                    background-color: #ccc;
+                                                                    display: flex;
+                                                                    align-items: center;
+                                                                    justify-content: center;
+                                                                    border-radius: 0.25rem;
+                                                                }
 
-																	.cartt:hover {
-																		transform: scale(0.9);
-																		transition: 1s;
-																		color: blue;
-																	}
-</style>
-															<div class="d-flex justify-content-center">
+                                                                    .cartt:hover {
+                                                                        transform: scale(0.9);
+                                                                        transition: 1s;
+                                                                        color: blue;
+                                                                    }
+                                                            </style>
+                                                            <div class="d-flex justify-content-center  elementor-button-content-wrapper">
 
-																<div class="d-flex flex-row gap-3">
 
-                                                                    <a asp-action="HospitalDoctors" asp-controller="Home">
-                                                                        <div class="cartt d-flex flex-column ">
-                                                                            <img src="https://dosyahastane.saglik.gov.tr/WebFiles/Sablonlar/images/sehir-hastaneleri-ikonlar/doktor.png" alt="">
-                                                                            <h6>Hekimlerimiz</h6>
+
+                                                            
+
+
+                                                                <!-- Button trigger modal -->
+                                                                <!-- Button trigger modal -->
+                                                                <!-- Modal -->
+
+
+                                                                <style>
+                                                                    .bildirim {
+                                                                        position: absolute;
+                                                                        margin-left: 210px;
+                                                                        margin-bottom: 180px;
+                                                                    }
+
+                                                                    #alarmIcon {
+                                                                        color: red;
+                                                                    }
+                                                                </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            </div>
+
+                                                            <div class="elementor-element elementor-element-e9c4a5a elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="e9c4a5a" data-element_type="widget" data-widget_type="button.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div class="elementor-button-wrapper">
+
+                                                                        <a class="elementor-button-link elementor-button elementor-size-sm" asp-controller="Home" asp-action="HospitalDoctors">
+                                                                            <div class="cartt d-flex flex-column elementor-button-content-wrapper elementor-button-text">
+                                                                                <img src="https://dosyahastane.saglik.gov.tr/WebFiles/Sablonlar/images/sehir-hastaneleri-ikonlar/doktor.png" alt="">
+                                                                                <h6>Hekimlerimiz</h6>
+                                                                            </div>
+
+
+                                                                        </a>
+                                                                        <a class="elementor-button-link elementor-button elementor-size-sm" asp-controller="Home" asp-action="Randevu">
+                                                                            <div class="cartt d-flex flex-column elementor-button-content-wrapper elementor-button-text">
+                                                                                <img src="https://dosyahastane.saglik.gov.tr/WebFiles/Sablonlar/images/sehir-hastaneleri-ikonlar/randevu.png" alt="">
+                                                                                <h6>Online Növbə</h6>
+                                                                            </div>
+
+
+                                                                        </a>
+                                                                        <a class="elementor-button-link elementor-button elementor-size-sm" asp-controller="Home" asp-action="AppointmentHastaSonuclari">
+                                                                            <div class="cartt d-flex flex-column elementor-button-content-wrapper elementor-button-text">
+                                                                                <img src="https://dosyahastane.saglik.gov.tr/WebFiles/Sablonlar/images/sehir-hastaneleri-ikonlar/rapor.png" alt="">
+                                                                                <h6>Hasta Sonuclari</h6>
+                                                                                <h1 class="d-none  bildirim" id="notificationModal">
+                                                                                    <i style="color:red" class="bi bi-alarm-fill" id="alarmIcon"></i>
+                                                                                </h1>
+                                                                            </div>
+
+
+                                                                        </a>
+
+
+                                                                        @if (ViewData["ShowH1"] != null && (bool)ViewData["ShowH1"])
+                                                                        {
+                                                                            <script>
+                                                                                document.getElementById("notificationModal").classList.remove("d-none");
+                                                                            </script>
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-db65b4f elementor-column elementor-col-50 elementor-top-column" data-id="db65b4f" data-element_type="column" data-settings="{&quot;background_motion_fx_mouseTrack_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_mouseTrack_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1,&quot;sizes&quot;:[]}}">
+                            <div class="elementor-column-wrap">
+                                <div class="elementor-widget-wrap">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="elementor-element elementor-element-3f53ec2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3f53ec2" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-b972399 elementor-column elementor-col-100 elementor-top-column" data-id="b972399" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-1bb5a73 elementor-widget elementor-widget-image" data-id="1bb5a73" data-element_type="widget" data-widget_type="image.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-image">
+                                                @*		<img style="border-radius:50%"  src="https://www.appletechsoft.com/wp-content/uploads/2020/06/Hospital-Management-System.jpg" class="attachment-thumbnail size-thumbnail" />*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-element elementor-element-e62eaf3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="e62eaf3" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-142f9aa elementor-column elementor-col-100 elementor-top-column" data-id="142f9aa" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-006011e elementor-widget elementor-widget-heading" data-id="006011e" data-element_type="widget" data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h3 class="elementor-heading-title elementor-size-default">Online Qeydiyat platformasi- etibarlı, provayder mərkəzli platforma</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-element elementor-element-3248def elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3248def" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        @foreach (var item in Model.Doctors)
+                        {
+                            count++;
+                        }
+                        <div class="elementor-element elementor-element-1803300 elementor-column elementor-col-33 elementor-top-column" data-id="1803300" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-00aa39a elementor-widget elementor-widget-counter" data-id="00aa39a" data-element_type="widget" data-widget_type="counter.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-counter">
+                                                <div class="elementor-counter-number-wrapper">
+                                                    <span class="elementor-counter-number-prefix"></span>
+                                                    <span class="elementor-counter-number" data-duration="500" data-to-value="@count" data-from-value="0" data-delimiter=",">0</span>
+                                                    <span class="elementor-counter-number-suffix">+</span>
+                                                </div>
+                                                <div class="elementor-counter-title">Hekim ve Boyuyur!</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @foreach (var item1 in Model.Appointments)
+                        {
+                            appointmentCount++;
+                        }
+                        <div class="elementor-element elementor-element-d9b4e79 elementor-column elementor-col-33 elementor-top-column" data-id="d9b4e79" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-7eda334 elementor-widget elementor-widget-counter" data-id="7eda334" data-element_type="widget" data-widget_type="counter.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-counter">
+                                                <div class="elementor-counter-number-wrapper">
+                                                    <span class="elementor-counter-number-prefix"></span>
+                                                    <span class="elementor-counter-number" data-duration="500" data-to-value="@appointmentCount" data-from-value="0" data-delimiter=",">0</span>
+                                                    <span class="elementor-counter-number-suffix">+</span>
+                                                </div>
+                                                <div class="elementor-counter-title">Xesteler</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @foreach (var item in Model.Hospital)
+                        {
+                            hospitalCount++;
+                        }
+                        <div class="elementor-element elementor-element-0cd69a4 elementor-column elementor-col-33 elementor-top-column" data-id="0cd69a4" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-58a72c4 elementor-widget elementor-widget-counter" data-id="58a72c4" data-element_type="widget" data-widget_type="counter.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-counter">
+                                                <div class="elementor-counter-number-wrapper">
+                                                    <span class="elementor-counter-number-prefix"></span>
+                                                    <span class="elementor-counter-number" data-duration="100" data-to-value="@hospitalCount" data-from-value="0">0</span>
+                                                    <span class="elementor-counter-number-suffix">M+</span>
+                                                </div>
+                                                <div class="elementor-counter-title">Saytimizda yer Alan Xestexanalar</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-element elementor-element-59f9928 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="59f9928" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-017abca elementor-column elementor-col-100 elementor-top-column" data-id="017abca" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-0d2a76a elementor-widget elementor-widget-divider" data-id="0d2a76a" data-element_type="widget" data-widget_type="divider.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-divider">
+                                                <span class="elementor-divider-separator">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-element elementor-element-784642b elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="784642b" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-13c2b04 elementor-column elementor-col-100 elementor-top-column" data-id="13c2b04" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-228bd89 elementor-pagination-position-inside elementor-widget elementor-widget-image-carousel" data-id="228bd89" data-element_type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;6&quot;,&quot;navigation&quot;:&quot;dots&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:76,&quot;sizes&quot;:[]},&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;speed&quot;:500,&quot;direction&quot;:&quot;ltr&quot;}" data-widget_type="image-carousel.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-image-carousel-wrapper swiper-container" dir="ltr">
+                                                <div class="elementor-image-carousel swiper-wrapper">
+                                                    @*///////////////////Xestexanalar bu hissede/////////////////////////////////////*@
+                                                    @foreach (var item in Model.Hospital)
+                                                    {
+                                                        <div class="swiper-slide">
+                                                            <figure class="swiper-slide-inner">
+                                                                <img style="width:4cm;height:2.6cm" decoding="async" class="swiper-slide-image" src="~/RootAllPictures/img/@item.ImagePath" alt="@item.Name" />
+                                                            </figure>
+                                                        </div>
+                                                    }
+
+
+
+
+                                                </div>
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-element elementor-element-6e3cda3 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6e3cda3" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-1ee0adf elementor-column elementor-col-100 elementor-top-column" data-id="1ee0adf" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-637528a elementor-widget elementor-widget-divider" data-id="637528a" data-element_type="widget" data-widget_type="divider.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-divider">
+                                                <span class="elementor-divider-separator">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-d8ecd15 elementor-widget elementor-widget-shortcode" data-id="d8ecd15" data-element_type="widget" data-widget_type="shortcode.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-shortcode">
+                                                <div data-elementor-type="wp-post" data-elementor-id="1665" class="elementor elementor-1665" data-elementor-settings="[]">
+                                                    <div class="elementor-inner">
+                                                        <div class="elementor-section-wrap">
+                                                            <section class="elementor-element elementor-element-a3e68aa elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a3e68aa" data-element_type="section">
+                                                                <div class="elementor-container elementor-column-gap-default">
+                                                                    <div class="elementor-row">
+                                                                        <div class="elementor-element elementor-element-a4f91f1 elementor-column elementor-col-100 elementor-top-column" data-id="a4f91f1" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <section class="elementor-element elementor-element-7cbb24f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="7cbb24f" data-element_type="section">
+                                                                                        <div class="elementor-container elementor-column-gap-default">
+                                                                                            <div class="elementor-row">
+                                                                                                <div class="elementor-element elementor-element-3bdb4dc elementor-column elementor-col-100 elementor-inner-column" data-id="3bdb4dc" data-element_type="column">
+                                                                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                                        <div class="elementor-widget-wrap">
+                                                                                                            <div class="elementor-element elementor-element-733be86 elementor-widget elementor-widget-heading" data-id="733be86" data-element_type="widget" data-widget_type="heading.default">
+                                                                                                                <div class="elementor-widget-container">
+                                                                                                                    <h3 class="elementor-heading-title elementor-size-default"><span style="color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif; font-size: 1.75rem; letter-spacing: normal;">Həkimlər/Xəstəxanalar/Klinikalar üçün Teletibb Platforması</span><br>Qoy Covid-19 təcrübənizə təsir etməsi!</h3>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </section>
+                                                                                    <section class="elementor-element elementor-element-358c74f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="358c74f" data-element_type="section">
+                                                                                        <div class="elementor-container elementor-column-gap-default">
+                                                                                            <div class="elementor-row">
+                                                                                                <div class="elementor-element elementor-element-9edf97b elementor-column elementor-col-33 elementor-inner-column" data-id="9edf97b" data-element_type="column">
+                                                                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                                        <div class="elementor-widget-wrap">
+                                                                                                            <div class="elementor-element elementor-element-9823e86 elementor-view-default elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="9823e86" data-element_type="widget" data-widget_type="icon-box.default">
+                                                                                                                <div class="elementor-widget-container">
+                                                                                                                    <div class="elementor-icon-box-wrapper">
+                                                                                                                        <div class="elementor-icon-box-icon">
+                                                                                                                            <span class="elementor-icon elementor-animation-">
+                                                                                                                                <i aria-hidden="true" class="icon icon-graph-2"></i>
+                                                                                                                            </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-icon-box-content">
+                                                                                                                            <h3 class="elementor-icon-box-title">
+                                                                                                                                <span>Ödənişlərlə Planlaşdırma</span>
+                                                                                                                            </h3>
+                                                                                                                            <p class="elementor-icon-box-description">Cədvəlinizi müəyyənləşdirin, ödənişləri toplayın. Vidceti veb saytınız və mobil tətbiqinizlə inteqrasiya edin. Bu qədər sadədir!</p>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="elementor-element elementor-element-6c1894d elementor-column elementor-col-33 elementor-inner-column" data-id="6c1894d" data-element_type="column">
+                                                                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                                        <div class="elementor-widget-wrap">
+                                                                                                            <div class="elementor-element elementor-element-2a96cfb elementor-view-default elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="2a96cfb" data-element_type="widget" data-widget_type="icon-box.default">
+                                                                                                                <div class="elementor-widget-container">
+                                                                                                                    <div class="elementor-icon-box-wrapper">
+                                                                                                                        <div class="elementor-icon-box-icon">
+                                                                                                                            <span class="elementor-icon elementor-animation-">
+                                                                                                                                <i aria-hidden="true" class="icon icon-decision-making"></i>
+                                                                                                                            </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-icon-box-content">
+                                                                                                                            <h3 class="elementor-icon-box-title">
+                                                                                                                                <span>HD Video/Audio</span>
+                                                                                                                            </h3>
+                                                                                                                            <p class="elementor-icon-box-description">
+                                                                                                                                Siz xəstələrinizlə həm internetdə, həm də proqramda HD Video/Audio zəng edə bilərsiniz.
+
+                                                                                                                            </p>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="elementor-element elementor-element-a73e49c elementor-column elementor-col-33 elementor-inner-column" data-id="a73e49c" data-element_type="column">
+                                                                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                                        <div class="elementor-widget-wrap">
+                                                                                                            <div class="elementor-element elementor-element-559e91b elementor-view-default elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="559e91b" data-element_type="widget" data-widget_type="icon-box.default">
+                                                                                                                <div class="elementor-widget-container">
+                                                                                                                    <div class="elementor-icon-box-wrapper">
+                                                                                                                        <div class="elementor-icon-box-icon">
+                                                                                                                            <span class="elementor-icon elementor-animation-">
+                                                                                                                                <i aria-hidden="true" class="icon icon-shield1"></i>
+                                                                                                                            </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-icon-box-content">
+                                                                                                                            <h3 class="elementor-icon-box-title">
+                                                                                                                                <span>
+                                                                                                                                    Elektron Resept
+                                                                                                                                </span>
+                                                                                                                            </h3>
+                                                                                                                            <p class="elementor-icon-box-description">Güclü, lakin sadə e-resept (EMR) sizə dərmanlar yazmağa və paylaşmağa və məsləhət verməyə imkan verəcək.</p>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </section>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
-                                                                    </a>
-                                                                        
-																		
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                            <section class="elementor-element elementor-element-44f5c72 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="44f5c72" data-element_type="section">
+                                                                <div class="elementor-container elementor-column-gap-default">
+                                                                    <div class="elementor-row">
+                                                                        <div class="elementor-element elementor-element-43316c4 elementor-column elementor-col-100 elementor-top-column" data-id="43316c4" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div class="elementor-element elementor-element-c290058 elementor-widget elementor-widget-divider" data-id="c290058" data-element_type="widget" data-widget_type="divider.default">
+                                                                                        <div class="elementor-widget-container">
+                                                                                            <div class="elementor-divider">
+                                                                                                <span class="elementor-divider-separator">
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-element elementor-element-f5586fb elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f5586fb" data-element_type="section" id="clinics" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-6f5bce4 elementor-column elementor-col-100 elementor-top-column" data-id="6f5bce4" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-1576f11 elementor-widget elementor-widget-shortcode" data-id="1576f11" data-element_type="widget" data-widget_type="shortcode.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-shortcode">
+                                                <div data-elementor-type="wp-post" data-elementor-id="3154" class="elementor elementor-3154" data-elementor-settings="[]">
+                                                    <div class="elementor-inner">
+                                                        <div class="elementor-section-wrap">
+                                                            <section class="elementor-element elementor-element-89c1b6d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="89c1b6d" data-element_type="section">
+                                                                <div class="elementor-container elementor-column-gap-default">
+                                                                    <div class="elementor-row">
+                                                                        <div class="elementor-element elementor-element-708d038 elementor-column elementor-col-100 elementor-top-column" data-id="708d038" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
 
-																		 <a asp-controller="Home" asp-action="Randevu">
-																	<div class="cartt d-flex flex-column ">
+                                                                                    <div class="elementor-element elementor-element-073eae0 elementor-widget elementor-widget-heading" data-id="073eae0" data-element_type="widget" data-widget_type="heading.default">
+                                                                                        <div class="elementor-widget-container">
+                                                                                            <h3 class="elementor-heading-title elementor-size-default">
 
-																		<img src="https://dosyahastane.saglik.gov.tr/WebFiles/Sablonlar/images/sehir-hastaneleri-ikonlar/randevu.png" alt="">
-																		<h6>Online Növbə</h6>
-																	</div>
-																	</a>
+                                                                                                Azərbaycan  Aparıcı Klinika İdarəetmə Sistemi Randevuları, Hesabları, Ödənişləri və Xəstə Məlumatlarını asanlıqla idarə edir!
+
+                                                                                            </h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                            <section class="elementor-element elementor-element-3755508 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3755508" data-element_type="section">
+                                                                <div class="elementor-container elementor-column-gap-default">
+                                                                    <div class="elementor-row">
+                                                                        <div class="elementor-element elementor-element-1a6354f elementor-column elementor-col-25 elementor-top-column" data-id="1a6354f" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div class="elementor-element elementor-element-8d0b1db elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="8d0b1db" data-element_type="widget" data-widget_type="icon-box.default">
+                                                                                        <div class="elementor-widget-container">
+                                                                                            <div class="elementor-icon-box-wrapper">
+                                                                                                <div class="elementor-icon-box-icon">
+                                                                                                    <a class="elementor-icon elementor-animation-" asp-controller="Home" asp-action="Randevu" target="_blank">
+                                                                                                        <i aria-hidden="true" class="icon icon-calendar-full"></i>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                                <div class="elementor-icon-box-content">
+                                                                                                    <h3 class="elementor-icon-box-title">
+                                                                                                        <a asp-controller="Home" asp-action="Randevu" target="_blank">Online Novbe</a>
+                                                                                                    </h3>
+                                                                                                    <p class="elementor-icon-box-description">
+                                                                                                        <ul class="clinic-list">
+                                                                                                            <li>Istenilen Xestexanaya daxil olma imkani</li>
+                                                                                                            <li>Istenilen Hekimele Online Novbe</li>
+                                                                                                            <li>Butun Huquqlar Qorunur</li>
+                                                                                                        </ul>
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="elementor-element elementor-element-54c788f elementor-column elementor-col-25 elementor-top-column" data-id="54c788f" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div class="elementor-element elementor-element-836b7fd elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="836b7fd" data-element_type="widget" data-widget_type="icon-box.default">
+                                                                                        <div class="elementor-widget-container">
+                                                                                            <div class="elementor-icon-box-wrapper">
+                                                                                                <div class="elementor-icon-box-icon">
+                                                                                                    <a asp-controller="Home" asp-action="HospitalDoctors" class="elementor-icon elementor-animation-" target="_blank">
+                                                                                                        <i aria-hidden="true" class="icon icon-business"></i>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                                <div class="elementor-icon-box-content">
+                                                                                                    <h3 class="elementor-icon-box-title">
+                                                                                                        <a asp-controller="Home" asp-action="HospitalDoctors" target="_blank">Hekimlerimiz</a>
+                                                                                                    </h3>
+                                                                                                    <p class="elementor-icon-box-description">
+                                                                                                        <ul class="clinic-list">
+                                                                                                            <li>Saytimizda Yer Alan Butun hekimler </li>
+                                                                                                            <li> Online Novbe Goturmek</li>
+
+                                                                                                        </ul>
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="elementor-element elementor-element-b5e9edf elementor-column elementor-col-25 elementor-top-column" data-id="b5e9edf" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div class="elementor-element elementor-element-e460377 elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="e460377" data-element_type="widget" data-widget_type="icon-box.default">
+                                                                                        <div class="elementor-widget-container">
+                                                                                            <div class="elementor-icon-box-wrapper">
+                                                                                                <div class="elementor-icon-box-icon">
+                                                                                                    <a asp-controller="Home" asp-action="AppointmentHastaSonuclari" class="elementor-icon elementor-animation-" target="_blank">
+                                                                                                        <i aria-hidden="true" class="icon icon-folders1"></i>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                                <div class="elementor-icon-box-content">
+                                                                                                    <h3 class="elementor-icon-box-title">
+                                                                                                        <a asp-controller="Home" asp-action="AppointmentHastaSonuclari" target="_blank">Hasta Sonuclari</a>
+                                                                                                    </h3>
+                                                                                                    <p class="elementor-icon-box-description">
+                                                                                                        <ul class="clinic-list">
+                                                                                                            <li>Bura Daxil Olaraq Oz Vaxtiniza baxa bilersiz</li>
+                                                                                                            <li> Bildirish Gelecek</li>
+                                                                                                            <li>Butun Huquqlar Qorunur</li>
+                                                                                                           
+                                                                                                        </ul>
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="elementor-element elementor-element-55634b6 elementor-column elementor-col-25 elementor-top-column" data-id="55634b6" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div class="elementor-element elementor-element-0864184 elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="0864184" data-element_type="widget" data-widget_type="icon-box.default">
+                                                                                        <div class="elementor-widget-container">
+                                                                                            <div class="elementor-icon-box-wrapper">
+                                                                                                <div class="elementor-icon-box-icon">
+                                                                                                    <a asp-controller="Home" asp-action="DoctorComment" class="elementor-icon elementor-animation-" target="_blank">
+                                                                                                        <i aria-hidden="true" class="icon icon-safety"></i>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                                <div class="elementor-icon-box-content">
+                                                                                                    <h3 class="elementor-icon-box-title">
+                                                                                                        <a asp-controller="Home" asp-action="DoctorComment"  target="_blank">Hekime Yorum<gwmw style="display:none;"></gwmw></a>
+                                                                                                    </h3>
+                                                                                                    <p class="elementor-icon-box-description">
+                                                                                                        <ul class="clinic-list">
+                                                                                                            <li>Istenilen Hekime <b>Yorum Yazmaq</b> Ucun</li>
+                                                                                                            <li>
+                                                                                                               Duzgun Ifade etmek.
+                                                                                                            </li>
+                                                                                                            <li>Butun Huquqlar Qorunur</li>
+
+                                                                                                        </ul>
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="elementor-element elementor-element-9ba3255 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="9ba3255" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-default">
+                                            <div class="elementor-row">
+                                                <div class="elementor-element elementor-element-3e1afa3 elementor-column elementor-col-100 elementor-inner-column" data-id="3e1afa3" data-element_type="column">
+                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                        <div class="elementor-widget-wrap">
+                                                            <div class="elementor-element elementor-element-523cf7e elementor-mobile-align-center elementor-align-center elementor-widget elementor-widget-button" data-id="523cf7e" data-element_type="widget" data-widget_type="button.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div class="elementor-button-wrapper">
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="elementor-element elementor-element-f47af04 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f47af04" data-element_type="section" id="medical">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-0ca013a elementor-column elementor-col-100 elementor-top-column" data-id="0ca013a" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="elementor-element elementor-element-239e66e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="239e66e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="elementor-element elementor-element-4db53f5 elementor-column elementor-col-100 elementor-top-column" data-id="4db53f5" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-29732e8 elementor-widget elementor-widget-shortcode" data-id="29732e8" data-element_type="widget" data-widget_type="shortcode.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-shortcode">
+                                                <div data-elementor-type="wp-post" data-elementor-id="468" class="elementor elementor-468" data-elementor-settings="[]">
+                                                    <div class="elementor-inner">
+                                                        <div class="elementor-section-wrap">
+                                                            <section class="elementor-element elementor-element-10a777d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="10a777d" data-element_type="section">
+                                                                <div class="elementor-container elementor-column-gap-default">
+                                                                    <div class="elementor-row">
+                                                                        <div class="elementor-element elementor-element-9adaa49 elementor-column elementor-col-100 elementor-top-column" data-id="9adaa49" data-element_type="column">
+                                                                            <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <section class="elementor-element elementor-element-d92c1ca elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="d92c1ca" data-element_type="section">
+                                                                                        <div class="elementor-container elementor-column-gap-default">
+                                                                                            <div class="elementor-row">
+                                                                                                <div class="elementor-element elementor-element-997c0bb elementor-column elementor-col-100 elementor-inner-column" data-id="997c0bb" data-element_type="column">
+                                                                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                                        <div class="elementor-widget-wrap">
+                                                                                                            <div class="elementor-element elementor-element-974329a elementor-widget elementor-widget-heading" data-id="974329a" data-element_type="widget" data-widget_type="heading.default">
+                                                                                                                <div class="elementor-widget-container">
+                                                                                                                    <h3 class="elementor-heading-title elementor-size-default">Read What Our Customers Say</h3>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="elementor-element elementor-element-53fd84b elementor-star-rating--align-center elementor--star-style-star_fontawesome elementor-widget elementor-widget-star-rating" data-id="53fd84b" data-element_type="widget" data-widget_type="star-rating.default">
+                                                                                                                <div class="elementor-widget-container">
+
+                                                                                                                    <div class="elementor-star-rating__wrapper">
+                                                                                                                        <div class="elementor-star-rating" title="5/5" itemtype="http://schema.org/Rating" itemscope="" itemprop="reviewRating"><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i> <span itemprop="ratingValue" class="elementor-screen-only">5/5</span></div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </section>
+                                                                                    <section class="elementor-element elementor-element-73fd176 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="73fd176" data-element_type="section">
+                                                                                        <div class="elementor-container elementor-column-gap-default">
+                                                                                            <div class="elementor-row">
+                                                                                                <div class="elementor-element elementor-element-5098aae elementor-column elementor-col-100 elementor-inner-column" data-id="5098aae" data-element_type="column">
+                                                                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                                                                        <div class="elementor-widget-wrap">
+                                                                                                            <div class="elementor-element elementor-element-3d36c23 elementor-testimonial--skin-bubble elementor-testimonial--layout-image_above elementor-testimonial--align-left elementor-arrows-yes elementor-pagination-type-bullets elementor-widget elementor-widget-testimonial-carousel" data-id="3d36c23" data-element_type="widget" data-settings="{&quot;show_arrows&quot;:&quot;yes&quot;,&quot;pagination&quot;:&quot;bullets&quot;,&quot;speed&quot;:500,&quot;autoplay&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;loop&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]}}" data-widget_type="testimonial-carousel.default">
+                                                                                                                <div class="elementor-widget-container">
+                                                                                                                    <div class="elementor-swiper">
+                                                                                                                        <div class="elementor-main-swiper swiper-container">
+                                                                                                                            <div class="swiper-wrapper">
+                                                                                                                                @foreach (var doctor in Model.Doctors)
+                                                                                                                                {
+                                                                                                                                    // Doktorun yorumlarını en son yazılan tarihine göre sırala
+                                                                                                                                    var latestComment = doctor.Comements.OrderByDescending(c => c.CommentDate).FirstOrDefault();
+
+                                                                                                                                    if (latestComment != null)
+                                                                                                                                    {
+                                                                                                                                        <div class="swiper-slide">
+                                                                                                                                            <div class="elementor-testimonial">
+                                                                                                                                                <div class="elementor-testimonial__content">
+                                                                                                                                                    <div class="elementor-testimonial__text">
+                                                                                                                                                        <p>@latestComment.CommentText</p>
+                                                                                                                                                      
+                                                                                                                                                    </div>
+                                                                                                                                                  
+                                                                                                                                                </div>
+                                                                                                                                                <span class="d-flex justify-content-end">
+                                                                                                                                                    @if (User.Identity.IsAuthenticated)
+                                                                                                                                                    {
+                                                                                                                                                        <b><i class="bi bi-person-fill"></i> @latestComment.UserName</b>
+                                                                                                                                                    }
+                                                                                                                                                </span>
+                                                                                                                                                <div class="elementor-testimonial__footer">
+                                                                                                                                                    <div class="elementor-testimonial__image">
+                                                                                                                                                        <img decoding="async" src="~/docpulse.com/wp-content/uploads/2020/01/doctor_img.png" alt="Dr. @doctor.Name">
+                                                                                                                                                    </div>
+                                                                                                                                                   
+                                                                                                                                                    <cite class="elementor-testimonial__cite">
+                                                                                                                                                        <span class="elementor-testimonial__name">Dr. @doctor.Name</span>
+                                                                                                                                                        <span class="elementor-testimonial__title">@doctor.Hospital.Name</span>
+                                                                                                                                                    
+                                                                                                                                                    </cite>
+                                                                                                                                               
+                                                                                                                                                </div>
+                                                                                                                                              
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    }
+
+                                                                                                                                    // Doktorun en son yazılan yorumundan 2 gün öncesine kadar olan diğer yorumları al
+                                                                                                                                    var oldComments = doctor.Comements
+                                                                                                                                    .Where(c => c.CommentDate < latestComment.CommentDate && c.CommentDate >= latestComment.CommentDate.AddDays(-2))
+                                                                                                                                    .OrderByDescending(c => c.CommentDate);
+
+                                                                                                                                    foreach (var oldComment in oldComments)
+                                                                                                                                    {
+                                                                                                                                        <div class="swiper-slide">
+                                                                                                                                            <div class="elementor-testimonial">
+                                                                                                                                                <div class="elementor-testimonial__content">
+                                                                                                                                                    <div class="elementor-testimonial__text">
+                                                                                                                                                        <p>@oldComment.CommentText</p>
+                                                                                                                                                     
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                                <div class="elementor-testimonial__footer">
+                                                                                                                                                    <div class="elementor-testimonial__image">
+                                                                                                                                                        <img decoding="async" src="~/docpulse.com/wp-content/uploads/2020/01/doctor_img.png" alt="Dr. @doctor.Name">
+                                                                                                                                                    </div>
+                                                                                                                                                    <cite class="elementor-testimonial__cite">
+                                                                                                                                                        <span class="elementor-testimonial__name">Dr. @doctor.Name</span>
+                                                                                                                                                        <span class="elementor-testimonial__title">@doctor.Hospital.Name</span>
+                                                                                                                                                    </cite>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    }
+                                                                                                                                }
 
 
-																	<a asp-controller="Home" asp-action="AppointmentHastaSonuclari">
-																		<div class="cartt d-flex flex-column">
-																			<img src="https://dosyahastane.saglik.gov.tr/WebFiles/Sablonlar/images/sehir-hastaneleri-ikonlar/rapor.png" alt="">
-																			<h6>Hasta Sonuclari</h6>
-																			<h1 class=" d-none bildirim" id="notificationModal">
-																				<i style="color:red" class="bi bi-alarm-fill" id="alarmIcon"></i>
-																			</h1>
-																		</div>
-
-
-																	</a>
-																	
-																	@if (ViewData["ShowH1"] != null && (bool)ViewData["ShowH1"])
-																	{
-																		<script>
-																			document.getElementById("notificationModal").classList.remove("d-none");
-																		</script>
-																	}
-
-                                                                 
-																	<!-- Button trigger modal -->
-																	<!-- Button trigger modal -->
-																	
-
-																	<!-- Modal -->
-															
-
-																		<style >
-																		.bildirim {
-																			position: absolute;
-																			margin-left: 210px;
-																			margin-bottom: 180px;
-																		}
-
-																		#alarmIcon {
-																			color: red;
-																		}
-																	</style>
-
-
-
-																
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-																</div>
-
-
-															</div>
-														
-
-															<div class="elementor-element elementor-element-e9c4a5a elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="e9c4a5a" data-element_type="widget" data-widget_type="button.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-button-wrapper">
-																		<a href="contact-us/index.html" target="_blank" class="elementor-button-link elementor-button elementor-size-sm" role="button">
-																			<span class="elementor-button-content-wrapper">
-																				<span class="elementor-button-text">Request Demo</span>
-																			</span>
-																		</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-								</div>
-							</div>
-						</div>
-						<div class="elementor-element elementor-element-db65b4f elementor-column elementor-col-50 elementor-top-column" data-id="db65b4f" data-element_type="column" data-settings="{&quot;background_motion_fx_mouseTrack_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_mouseTrack_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1,&quot;sizes&quot;:[]}}">
-							<div class="elementor-column-wrap">
-								<div class="elementor-widget-wrap">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			
-			</section>
-			<section class="elementor-element elementor-element-3f53ec2 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3f53ec2" data-element_type="section">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-b972399 elementor-column elementor-col-100 elementor-top-column" data-id="b972399" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-1bb5a73 elementor-widget elementor-widget-image" data-id="1bb5a73" data-element_type="widget" data-widget_type="image.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-image">
-										@*		<img style="border-radius:50%"  src="https://www.appletechsoft.com/wp-content/uploads/2020/06/Hospital-Management-System.jpg" class="attachment-thumbnail size-thumbnail" />*@
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="elementor-element elementor-element-e62eaf3 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="e62eaf3" data-element_type="section">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-142f9aa elementor-column elementor-col-100 elementor-top-column" data-id="142f9aa" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-006011e elementor-widget elementor-widget-heading" data-id="006011e" data-element_type="widget" data-widget_type="heading.default">
-										<div class="elementor-widget-container">
-											<h3 class="elementor-heading-title elementor-size-default">Online Qeydiyat platformasi- etibarlı, provayder mərkəzli platforma</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="elementor-element elementor-element-3248def elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3248def" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						@foreach (var item in Model.Doctors)
-						{
-							count++;
-						}
-						<div class="elementor-element elementor-element-1803300 elementor-column elementor-col-33 elementor-top-column" data-id="1803300" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-00aa39a elementor-widget elementor-widget-counter" data-id="00aa39a" data-element_type="widget" data-widget_type="counter.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-counter">
-												<div class="elementor-counter-number-wrapper">
-													<span class="elementor-counter-number-prefix"></span>
-													<span class="elementor-counter-number" data-duration="500" data-to-value="@count" data-from-value="0" data-delimiter=",">0</span>
-													<span class="elementor-counter-number-suffix">+</span>
-												</div>
-												<div class="elementor-counter-title">Hekim ve Boyuyur!</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						@foreach (var item1 in Model.Appointments)
-						{
-							appointmentCount++;
-						}
-						<div class="elementor-element elementor-element-d9b4e79 elementor-column elementor-col-33 elementor-top-column" data-id="d9b4e79" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-7eda334 elementor-widget elementor-widget-counter" data-id="7eda334" data-element_type="widget" data-widget_type="counter.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-counter">
-												<div class="elementor-counter-number-wrapper">
-													<span class="elementor-counter-number-prefix"></span>
-													<span class="elementor-counter-number" data-duration="500" data-to-value="@appointmentCount" data-from-value="0" data-delimiter=",">0</span>
-													<span class="elementor-counter-number-suffix">+</span>
-												</div>
-												<div class="elementor-counter-title">Xesteler</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						@foreach (var item in Model.Hospital)
-						{
-							hospitalCount++;
-						}
-						<div class="elementor-element elementor-element-0cd69a4 elementor-column elementor-col-33 elementor-top-column" data-id="0cd69a4" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-58a72c4 elementor-widget elementor-widget-counter" data-id="58a72c4" data-element_type="widget" data-widget_type="counter.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-counter">
-												<div class="elementor-counter-number-wrapper">
-													<span class="elementor-counter-number-prefix"></span>
-													<span class="elementor-counter-number" data-duration="100" data-to-value="@hospitalCount" data-from-value="0">0</span>
-													<span class="elementor-counter-number-suffix">M+</span>
-												</div>
-												<div class="elementor-counter-title">Saytimizda yer Alan Xestexanalar</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="elementor-element elementor-element-59f9928 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="59f9928" data-element_type="section">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-017abca elementor-column elementor-col-100 elementor-top-column" data-id="017abca" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-0d2a76a elementor-widget elementor-widget-divider" data-id="0d2a76a" data-element_type="widget" data-widget_type="divider.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-divider">
-												<span class="elementor-divider-separator">
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="elementor-element elementor-element-784642b elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="784642b" data-element_type="section">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-13c2b04 elementor-column elementor-col-100 elementor-top-column" data-id="13c2b04" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-228bd89 elementor-pagination-position-inside elementor-widget elementor-widget-image-carousel" data-id="228bd89" data-element_type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;6&quot;,&quot;navigation&quot;:&quot;dots&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:76,&quot;sizes&quot;:[]},&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;speed&quot;:500,&quot;direction&quot;:&quot;ltr&quot;}" data-widget_type="image-carousel.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-image-carousel-wrapper swiper-container" dir="ltr">
-												<div class="elementor-image-carousel swiper-wrapper">
-													@*///////////////////Xestexanalar bu hissede/////////////////////////////////////*@
-													@foreach (var item in Model.Hospital)
-													{
-														<div class="swiper-slide">
-														<figure class="swiper-slide-inner">
-															<img style="width:4cm;height:2.6cm" decoding="async" class="swiper-slide-image" src="~/RootAllPictures/img/@item.ImagePath" alt="@item.Name" />
-														</figure>
-													</div>
-													}
-													
-														
-
-													
-														</div>
-												<div class="swiper-pagination"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="elementor-element elementor-element-6e3cda3 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6e3cda3" data-element_type="section">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-1ee0adf elementor-column elementor-col-100 elementor-top-column" data-id="1ee0adf" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-637528a elementor-widget elementor-widget-divider" data-id="637528a" data-element_type="widget" data-widget_type="divider.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-divider">
-												<span class="elementor-divider-separator">
-												</span>
-											</div>
-										</div>
-									</div>
-									<div class="elementor-element elementor-element-d8ecd15 elementor-widget elementor-widget-shortcode" data-id="d8ecd15" data-element_type="widget" data-widget_type="shortcode.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-shortcode">
-												<div data-elementor-type="wp-post" data-elementor-id="1665" class="elementor elementor-1665" data-elementor-settings="[]">
-													<div class="elementor-inner">
-														<div class="elementor-section-wrap">
-															<section class="elementor-element elementor-element-a3e68aa elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a3e68aa" data-element_type="section">
-																<div class="elementor-container elementor-column-gap-default">
-																	<div class="elementor-row">
-																		<div class="elementor-element elementor-element-a4f91f1 elementor-column elementor-col-100 elementor-top-column" data-id="a4f91f1" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					<section class="elementor-element elementor-element-7cbb24f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="7cbb24f" data-element_type="section">
-																						<div class="elementor-container elementor-column-gap-default">
-																							<div class="elementor-row">
-																								<div class="elementor-element elementor-element-3bdb4dc elementor-column elementor-col-100 elementor-inner-column" data-id="3bdb4dc" data-element_type="column">
-																									<div class="elementor-column-wrap  elementor-element-populated">
-																										<div class="elementor-widget-wrap">
-																											<div class="elementor-element elementor-element-733be86 elementor-widget elementor-widget-heading" data-id="733be86" data-element_type="widget" data-widget_type="heading.default">
-																												<div class="elementor-widget-container">
-																													<h3 class="elementor-heading-title elementor-size-default"><span style="color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif; font-size: 1.75rem; letter-spacing: normal;">Həkimlər/Xəstəxanalar/Klinikalar üçün Teletibb Platforması</span><br>Qoy Covid-19 təcrübənizə təsir etməsin!</h3>
-																												</div>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</section>
-																					<section class="elementor-element elementor-element-358c74f elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="358c74f" data-element_type="section">
-																						<div class="elementor-container elementor-column-gap-default">
-																							<div class="elementor-row">
-																								<div class="elementor-element elementor-element-9edf97b elementor-column elementor-col-33 elementor-inner-column" data-id="9edf97b" data-element_type="column">
-																									<div class="elementor-column-wrap  elementor-element-populated">
-																										<div class="elementor-widget-wrap">
-																											<div class="elementor-element elementor-element-9823e86 elementor-view-default elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="9823e86" data-element_type="widget" data-widget_type="icon-box.default">
-																												<div class="elementor-widget-container">
-																													<div class="elementor-icon-box-wrapper">
-																														<div class="elementor-icon-box-icon">
-																															<span class="elementor-icon elementor-animation-">
-																																<i aria-hidden="true" class="icon icon-graph-2"></i>
-																															</span>
-																														</div>
-																														<div class="elementor-icon-box-content">
-																															<h3 class="elementor-icon-box-title">
-																																<span>Scheduling with Payments</span>
-																															</h3>
-																															<p class="elementor-icon-box-description">Specify your schedule, collect payments. Integrate the widget with your website and your mobile app. It’s that simple!</p>
-																														</div>
-																													</div>
-																												</div>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																								<div class="elementor-element elementor-element-6c1894d elementor-column elementor-col-33 elementor-inner-column" data-id="6c1894d" data-element_type="column">
-																									<div class="elementor-column-wrap  elementor-element-populated">
-																										<div class="elementor-widget-wrap">
-																											<div class="elementor-element elementor-element-2a96cfb elementor-view-default elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="2a96cfb" data-element_type="widget" data-widget_type="icon-box.default">
-																												<div class="elementor-widget-container">
-																													<div class="elementor-icon-box-wrapper">
-																														<div class="elementor-icon-box-icon">
-																															<span class="elementor-icon elementor-animation-">
-																																<i aria-hidden="true" class="icon icon-decision-making"></i>
-																															</span>
-																														</div>
-																														<div class="elementor-icon-box-content">
-																															<h3 class="elementor-icon-box-title">
-																																<span>HD Video/Audio</span>
-																															</h3>
-																															<p class="elementor-icon-box-description">You can have a HD Video/Audio call with your patients - both on web and app.</p>
-																														</div>
-																													</div>
-																												</div>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																								<div class="elementor-element elementor-element-a73e49c elementor-column elementor-col-33 elementor-inner-column" data-id="a73e49c" data-element_type="column">
-																									<div class="elementor-column-wrap  elementor-element-populated">
-																										<div class="elementor-widget-wrap">
-																											<div class="elementor-element elementor-element-559e91b elementor-view-default elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="559e91b" data-element_type="widget" data-widget_type="icon-box.default">
-																												<div class="elementor-widget-container">
-																													<div class="elementor-icon-box-wrapper">
-																														<div class="elementor-icon-box-icon">
-																															<span class="elementor-icon elementor-animation-">
-																																<i aria-hidden="true" class="icon icon-shield1"></i>
-																															</span>
-																														</div>
-																														<div class="elementor-icon-box-content">
-																															<h3 class="elementor-icon-box-title">
-																																<span>E-Prescription</span>
-																															</h3>
-																															<p class="elementor-icon-box-description">A powerful but simple e-prescription (EMR) will allow you to prescribe and share medications and advise.</p>
-																														</div>
-																													</div>
-																												</div>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</section>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</section>
-															<section class="elementor-element elementor-element-44f5c72 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="44f5c72" data-element_type="section">
-																<div class="elementor-container elementor-column-gap-default">
-																	<div class="elementor-row">
-																		<div class="elementor-element elementor-element-43316c4 elementor-column elementor-col-100 elementor-top-column" data-id="43316c4" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					<div class="elementor-element elementor-element-c290058 elementor-widget elementor-widget-divider" data-id="c290058" data-element_type="widget" data-widget_type="divider.default">
-																						<div class="elementor-widget-container">
-																							<div class="elementor-divider">
-																								<span class="elementor-divider-separator">
-																								</span>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</section>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="elementor-element elementor-element-f5586fb elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f5586fb" data-element_type="section" id="clinics" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-6f5bce4 elementor-column elementor-col-100 elementor-top-column" data-id="6f5bce4" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-1576f11 elementor-widget elementor-widget-shortcode" data-id="1576f11" data-element_type="widget" data-widget_type="shortcode.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-shortcode">
-												<div data-elementor-type="wp-post" data-elementor-id="3154" class="elementor elementor-3154" data-elementor-settings="[]">
-													<div class="elementor-inner">
-														<div class="elementor-section-wrap">
-															<section class="elementor-element elementor-element-89c1b6d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="89c1b6d" data-element_type="section">
-																<div class="elementor-container elementor-column-gap-default">
-																	<div class="elementor-row">
-																		<div class="elementor-element elementor-element-708d038 elementor-column elementor-col-100 elementor-top-column" data-id="708d038" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					
-																					<div class="elementor-element elementor-element-073eae0 elementor-widget elementor-widget-heading" data-id="073eae0" data-element_type="widget" data-widget_type="heading.default">
-																						<div class="elementor-widget-container">
-																							<h3 class="elementor-heading-title elementor-size-default">
-																								
-																								Azərbaycan  Aparıcı Klinika İdarəetmə Sistemi Randevuları, Hesabları, Ödənişləri və Xəstə Məlumatlarını asanlıqla idarə edir!
-
-																							</h3>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</section>
-															<section class="elementor-element elementor-element-3755508 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="3755508" data-element_type="section">
-																<div class="elementor-container elementor-column-gap-default">
-																	<div class="elementor-row">
-																		<div class="elementor-element elementor-element-1a6354f elementor-column elementor-col-25 elementor-top-column" data-id="1a6354f" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					<div class="elementor-element elementor-element-8d0b1db elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="8d0b1db" data-element_type="widget" data-widget_type="icon-box.default">
-																						<div class="elementor-widget-container">
-																							<div class="elementor-icon-box-wrapper">
-																								<div class="elementor-icon-box-icon">
-																									<a class="elementor-icon elementor-animation-" asp-controller="Home" asp-action="Randevu" target="_blank">
-																										<i aria-hidden="true" class="icon icon-calendar-full"></i>
-																									</a>
-																								</div>
-																								<div class="elementor-icon-box-content">
-																									<h3 class="elementor-icon-box-title">
-																										<a asp-controller="Home" asp-action="Randevu" target="_blank">Appointments</a>
-																									</h3>
-																									<p class="elementor-icon-box-description">
-																										<ul class="clinic-list">
-																											<li>Set up timings without any hurdle</li>
-																											<li>Manage patient appointments with IVR, app or online</li>
-																											<li>Handle the queue in a waiting room instantly</li>
-																										</ul>
-																									</p>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="elementor-element elementor-element-54c788f elementor-column elementor-col-25 elementor-top-column" data-id="54c788f" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					<div class="elementor-element elementor-element-836b7fd elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="836b7fd" data-element_type="widget" data-widget_type="icon-box.default">
-																						<div class="elementor-widget-container">
-																							<div class="elementor-icon-box-wrapper">
-																								<div class="elementor-icon-box-icon">
-																									<a class="elementor-icon elementor-animation-" href="products/medical-billing-software.html" target="_blank">
-																										<i aria-hidden="true" class="icon icon-business"></i>
-																									</a>
-																								</div>
-																								<div class="elementor-icon-box-content">
-																									<h3 class="elementor-icon-box-title">
-																										<a href="products/medical-billing-software.html" target="_blank">Billing</a>
-																									</h3>
-																									<p class="elementor-icon-box-description">
-																										<ul class="clinic-list">
-																											<li>Systematize the recording of payments & creation of bills</li>
-																											<li>Printed receipts signifying the brand name</li>
-
-																										</ul>
-																									</p>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="elementor-element elementor-element-b5e9edf elementor-column elementor-col-25 elementor-top-column" data-id="b5e9edf" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					<div class="elementor-element elementor-element-e460377 elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="e460377" data-element_type="widget" data-widget_type="icon-box.default">
-																						<div class="elementor-widget-container">
-																							<div class="elementor-icon-box-wrapper">
-																								<div class="elementor-icon-box-icon">
-																									<a class="elementor-icon elementor-animation-" href="products/patient-management-system/index.html" target="_blank">
-																										<i aria-hidden="true" class="icon icon-folders1"></i>
-																									</a>
-																								</div>
-																								<div class="elementor-icon-box-content">
-																									<h3 class="elementor-icon-box-title">
-																										<a href="products/patient-management-system/index.html" target="_blank">Patient Records</a>
-																									</h3>
-																									<p class="elementor-icon-box-description">
-																										<ul class="clinic-list">
-																											<li>Keep a track of your patient visits & history; easily and digitally!</li>
-																											<li>Printed prescriptions for easy understanding</li>
-																											<li>Improved care</li>
-																										</ul>
-																									</p>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="elementor-element elementor-element-55634b6 elementor-column elementor-col-25 elementor-top-column" data-id="55634b6" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					<div class="elementor-element elementor-element-0864184 elementor-view-stacked elementor-shape-circle elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-icon-box" data-id="0864184" data-element_type="widget" data-widget_type="icon-box.default">
-																						<div class="elementor-widget-container">
-																							<div class="elementor-icon-box-wrapper">
-																								<div class="elementor-icon-box-icon">
-																									<a class="elementor-icon elementor-animation-" href="safety-security/index.html" target="_blank">
-																										<i aria-hidden="true" class="icon icon-safety"></i>
-																									</a>
-																								</div>
-																								<div class="elementor-icon-box-content">
-																									<h3 class="elementor-icon-box-title">
-																										<a href="safety-security/index.html" target="_blank">Safety & Security<gwmw style="display:none;"></gwmw></a>
-																									</h3>
-																									<p class="elementor-icon-box-description">
-																										<ul class="clinic-list">
-																											<li>Confidentiality is priority! With the <b>practice management software,</b> data is safe and secure</li>
-																											<li>
-																												We comply with the international data norms
-																											</li>
-
-																										</ul>
-																									</p>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</section>
-															
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<section class="elementor-element elementor-element-9ba3255 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="9ba3255" data-element_type="section">
-										<div class="elementor-container elementor-column-gap-default">
-											<div class="elementor-row">
-												<div class="elementor-element elementor-element-3e1afa3 elementor-column elementor-col-100 elementor-inner-column" data-id="3e1afa3" data-element_type="column">
-													<div class="elementor-column-wrap  elementor-element-populated">
-														<div class="elementor-widget-wrap">
-															<div class="elementor-element elementor-element-523cf7e elementor-mobile-align-center elementor-align-center elementor-widget elementor-widget-button" data-id="523cf7e" data-element_type="widget" data-widget_type="button.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-button-wrapper">
-																		<a href="solutions/clinic-management-software.html" target="_blank" class="elementor-button-link elementor-button elementor-size-sm" role="button">
-																			<span class="elementor-button-content-wrapper">
-																				<span class="elementor-button-text">Learn more about DocPulse Clinic Management</span>
-																			</span>
-																		</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</section>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="elementor-element elementor-element-f47af04 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="f47af04" data-element_type="section" id="medical">
-				<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-0ca013a elementor-column elementor-col-100 elementor-top-column" data-id="0ca013a" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="elementor-element elementor-element-239e66e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="239e66e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-row">
-						<div class="elementor-element elementor-element-4db53f5 elementor-column elementor-col-100 elementor-top-column" data-id="4db53f5" data-element_type="column">
-							<div class="elementor-column-wrap  elementor-element-populated">
-								<div class="elementor-widget-wrap">
-									<div class="elementor-element elementor-element-29732e8 elementor-widget elementor-widget-shortcode" data-id="29732e8" data-element_type="widget" data-widget_type="shortcode.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-shortcode">
-												<div data-elementor-type="wp-post" data-elementor-id="468" class="elementor elementor-468" data-elementor-settings="[]">
-													<div class="elementor-inner">
-														<div class="elementor-section-wrap">
-															<section class="elementor-element elementor-element-10a777d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="10a777d" data-element_type="section">
-																<div class="elementor-container elementor-column-gap-default">
-																	<div class="elementor-row">
-																		<div class="elementor-element elementor-element-9adaa49 elementor-column elementor-col-100 elementor-top-column" data-id="9adaa49" data-element_type="column">
-																			<div class="elementor-column-wrap  elementor-element-populated">
-																				<div class="elementor-widget-wrap">
-																					<section class="elementor-element elementor-element-d92c1ca elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="d92c1ca" data-element_type="section">
-																						<div class="elementor-container elementor-column-gap-default">
-																							<div class="elementor-row">
-																								<div class="elementor-element elementor-element-997c0bb elementor-column elementor-col-100 elementor-inner-column" data-id="997c0bb" data-element_type="column">
-																									<div class="elementor-column-wrap  elementor-element-populated">
-																										<div class="elementor-widget-wrap">
-																											<div class="elementor-element elementor-element-974329a elementor-widget elementor-widget-heading" data-id="974329a" data-element_type="widget" data-widget_type="heading.default">
-																												<div class="elementor-widget-container">
-																													<h3 class="elementor-heading-title elementor-size-default">Read What Our Customers Say</h3>
-																												</div>
-																											</div>
-																											<div class="elementor-element elementor-element-53fd84b elementor-star-rating--align-center elementor--star-style-star_fontawesome elementor-widget elementor-widget-star-rating" data-id="53fd84b" data-element_type="widget" data-widget_type="star-rating.default">
-																												<div class="elementor-widget-container">
-
-																													<div class="elementor-star-rating__wrapper">
-																														<div class="elementor-star-rating" title="5/5" itemtype="http://schema.org/Rating" itemscope="" itemprop="reviewRating"><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i><i class="elementor-star-full">&#xE934;</i> <span itemprop="ratingValue" class="elementor-screen-only">5/5</span></div>
-																													</div>
-																												</div>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</section>
-																					<section class="elementor-element elementor-element-73fd176 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="73fd176" data-element_type="section">
-																						<div class="elementor-container elementor-column-gap-default">
-																							<div class="elementor-row">
-																								<div class="elementor-element elementor-element-5098aae elementor-column elementor-col-100 elementor-inner-column" data-id="5098aae" data-element_type="column">
-																									<div class="elementor-column-wrap  elementor-element-populated">
-																										<div class="elementor-widget-wrap">
-																											<div class="elementor-element elementor-element-3d36c23 elementor-testimonial--skin-bubble elementor-testimonial--layout-image_above elementor-testimonial--align-left elementor-arrows-yes elementor-pagination-type-bullets elementor-widget elementor-widget-testimonial-carousel" data-id="3d36c23" data-element_type="widget" data-settings="{&quot;show_arrows&quot;:&quot;yes&quot;,&quot;pagination&quot;:&quot;bullets&quot;,&quot;speed&quot;:500,&quot;autoplay&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;loop&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]}}" data-widget_type="testimonial-carousel.default">
-																												<div class="elementor-widget-container">
-																													<div class="elementor-swiper">
-																														<div class="elementor-main-swiper swiper-container">
-																															<div class="swiper-wrapper">
-																																<div class="swiper-slide">
-																																	<div class="elementor-testimonial">
-																																		<div class="elementor-testimonial__content">
-																																			<div class="elementor-testimonial__text">
-																																				Our OPD is fully managed by DocPulse. Appointments and Queue management works very well, and it has made administration very efficient and easy.
-																																			</div>
-																																		</div>
-																																		<div class="elementor-testimonial__footer">
-																																			<div class="elementor-testimonial__image">
-																																				<img decoding="async" src="~/docpulse.com/wp-content/uploads/2020/01/doctor_img.png" alt="Vinay">
-																																			</div>
-																																			<cite class="elementor-testimonial__cite"><span class="elementor-testimonial__name">Vinay</span><span class="elementor-testimonial__title">IT Head, Vikram Hospital, India</span></cite>
-																																		</div>
-																																	</div>
-																																</div>
-																																<div class="swiper-slide">
-																																	<div class="elementor-testimonial">
-																																		<div class="elementor-testimonial__content">
-																																			<div class="elementor-testimonial__text">
-																																				The DocPulse system has proven to be very useful and has really improved the services in my clinic. I highly appreciate. I highly recommend it.
-																																			</div>
-																																		</div>
-																																		<div class="elementor-testimonial__footer">
-																																			<div class="elementor-testimonial__image">
-																																				<img decoding="async" src="~/docpulse.com/wp-content/uploads/2020/01/doctor_img.png" alt="Dr. Anthony">
-																																			</div>
-																																			<cite class="elementor-testimonial__cite"><span class="elementor-testimonial__name">Dr. Anthony</span><span class="elementor-testimonial__title">Diabetologist, Kenya</span></cite>
-																																		</div>
-																																	</div>
-																																</div>
-																																<div class="swiper-slide">
-																																	<div class="elementor-testimonial">
-																																		<div class="elementor-testimonial__content">
-																																			<div class="elementor-testimonial__text">
-																																				After looking at various products, I finally zeroed down to Docpulse, which I have been using for the last 2 years. Online booking is seamless, Queue Management & Vaccine reminders are appreciated by my patients. I highly recommend Docpulse.
-																																			</div>
-																																		</div>
-																																		<div class="elementor-testimonial__footer">
-																																			<div class="elementor-testimonial__image">
-																																				<img decoding="async" src="~/docpulse.com/wp-content/uploads/2020/01/doctor_img.png" alt="Dr. Naveen Kini">
-																																			</div>
-																																			<cite class="elementor-testimonial__cite"><span class="elementor-testimonial__name">Dr. Naveen Kini</span><span class="elementor-testimonial__title">Pediatrician, India</span></cite>
-																																		</div>
-																																	</div>
-																																</div>
-																																<div class="swiper-slide">
-																																	<div class="elementor-testimonial">
-																																		<div class="elementor-testimonial__content">
-																																			<div class="elementor-testimonial__text">
-																																				DocPulse EMR is simple, and easy to use. When patients contact me over e-consultation, all their past history is in one place which helps a lot. The team is very responsive, and I highly recommend them.
-
-																																			</div>
-																																		</div>
-																																		<div class="elementor-testimonial__footer">
-																																			<div class="elementor-testimonial__image">
-																																				<img decoding="async" src="~/docpulse.com/wp-content/uploads/2020/01/doctor_img.png" alt="Dr. Prasanna Kumar">
-																																			</div>
-																																			<cite class="elementor-testimonial__cite"><span class="elementor-testimonial__name">Dr. Prasanna Kumar</span><span class="elementor-testimonial__title">Endocrinologist, India</span></cite>
-																																		</div>
-																																	</div>
-																																</div>
-																															</div>
-																															<div class="swiper-pagination"></div>
-																															<div class="elementor-swiper-button elementor-swiper-button-prev">
-																																<i class="eicon-chevron-left" aria-hidden="true"></i>
-																																<span class="elementor-screen-only">Previous</span>
-																															</div>
-																															<div class="elementor-swiper-button elementor-swiper-button-next">
-																																<i class="eicon-chevron-right" aria-hidden="true"></i>
-																																<span class="elementor-screen-only">Next</span>
-																															</div>
-																														</div>
-																													</div>
-																												</div>
-																											</div>
-																										</div>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</section>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</section>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
+                                                                                                                               
+                                                                                                                            </div>
+                                                                                                                            <div class="swiper-pagination"></div>
+                                                                                                                            <div class="elementor-swiper-button elementor-swiper-button-prev">
+                                                                                                                                <i class="eicon-chevron-left" aria-hidden="true"></i>
+                                                                                                                                <span class="elementor-screen-only">Previous</span>
+                                                                                                                            </div>
+                                                                                                                            <div class="elementor-swiper-button elementor-swiper-button-next">
+                                                                                                                                <i class="eicon-chevron-right" aria-hidden="true"></i>
+                                                                                                                                <span class="elementor-screen-only">Next</span>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </section>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 </div>

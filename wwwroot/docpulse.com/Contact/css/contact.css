@@ -1,0 +1,136 @@
+body {
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #777777;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contact-content {
+  width: 100%;
+  height: 350px;
+  background: url("https://preview.colorlib.com/theme/hospice/img/banner-bg.jpg.webp")
+    no-repeat center bottom;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-content h1 {
+  color: #ffffff;
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.page_link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+  color: white;
+}
+
+.page_link a {
+  color: white;
+  font-size: 14px;
+  color: #ffffff;
+  transition: all 0.3s linear;
+}
+
+.page_link a:hover {
+  color: #3face4;
+}
+
+.section-item {
+  padding-top: 130px;
+  padding-bottom: 100px;
+}
+
+iframe {
+  width: 100%;
+  height: 420px;
+  margin-bottom: 80px;
+}
+
+.info_item {
+  display: flex;
+  gap: 20px;
+}
+
+.info_item svg {
+  font-size: 18px;
+  color: #3face4;
+  font-weight: 600;
+}
+
+.info_item h6 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+.info_item p {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.form_group {
+  text-align: end;
+}
+
+.form_group input {
+  width: 100%;
+  font-size: 13px;
+  line-height: 26px;
+  color: #999;
+  border: 1px solid #eeeeee;
+  padding: 6px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.form_group textarea {
+  display: block;
+  height: 150px;
+  width: 100%;
+  font-size: 13px;
+  line-height: 26px;
+  color: #999;
+  border: 1px solid #eeeeee;
+  padding: 6px;
+  padding-left: 20px;
+  outline: none;
+}
+
+.form_btn {
+  margin-top: 20px;
+  border: 1px solid #3face4;
+  display: inline-block;
+  background: #3face4;
+  padding: 0px 30px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 38px;
+  transition: all 0.3s linear;
+}
+
+.form_btn:hover {
+  background: #fff;
+  color: #3face4;
+  border: 1px solid #3face4;
+}
+
+@media only screen and (max-width: 500px) {
+  .section-item {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+}

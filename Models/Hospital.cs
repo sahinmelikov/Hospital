@@ -8,7 +8,8 @@
 		public bool IsDeleted { get; set; }
 		public string ImagePath { get;set; }
 		public List<Doctor> Doctors { get; set; }
-	
+ 
 
-	}
+
+    }
 }

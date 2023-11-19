@@ -15,5 +15,6 @@ namespace Hospital_Template.DAL
 		public DbSet<Doctor> Doctor { get; set; }
 		public DbSet<DoctorPosition>? DoctorPosition { get; set;}
 		public DbSet<Appointment>? Appointments { get; set;}
+		public DbSet<Comement> Comments { get; set; }
 	}
 }

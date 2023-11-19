@@ -2,12 +2,15 @@
 using Hospital_Template.Models;
 using Hospital_Template.Utilities.Extensions;
 using Hospital_Template.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Hospital_Template.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Maderator")]
     public class PositionController : Controller
     {
         private readonly AppDbContext _appDbContext;

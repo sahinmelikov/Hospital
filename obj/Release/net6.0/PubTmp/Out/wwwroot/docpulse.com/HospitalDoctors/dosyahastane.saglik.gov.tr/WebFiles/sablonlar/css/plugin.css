@@ -1,0 +1,377 @@
+	@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100&amp;display=swap");
+	
+	@import url("bootstrap.css");
+	@import url("animate.css");
+	@import url("../fonts/font-awesome.html");
+	@import url("default.css");
+	@import url("theme.css"); 
+	@import url("medical_tourism.css");
+	@import url("responsive.css"); 
+	@import url("popup.css");
+	
+	
+	body {
+		background:#f2f2f2 url("../images/bg-body.png") center 0px no-repeat; font-family: 'Roboto', sans-serif;  
+		overflow-x: hidden;  color:#444
+	}
+	*,h1,h2,h3,h4,h5,h6,a {
+		margin: 0; padding: 0; text-decoration: none; 
+	}
+	h1 {
+		font-size:25px;
+	}
+	h2 {
+		font-size:21px;
+	}	
+	h3 {
+		font-size:19px; 
+	}	
+	h4 {
+		font-size:17px;  
+	}	
+	h5 {
+		font-size:15px;  
+	}
+	h6 {
+		font-size:13px;  
+	}
+	p {
+		font-size:14px
+	}
+	li a {  
+		font-size:13px;
+	} 
+	a:hover, footer .list-icon li a:hover {
+		text-decoration: none;   -o-transition:.5s;  -ms-transition:.5s;  -moz-transition:.5s; -webkit-transition:.5s; transition:.5s;
+		color:#ff0000; 
+	} 
+	a, p{
+		color: #444;
+	}	
+	
+	#tab-menu-list li a, .all_read_mode, .lang-read-more {
+		font-size:15px
+	}
+	
+	.lang-read-more:after {
+		content: "\f178";   font-family: "FontAwesome"; padding-left:5px;
+	} 
+	
+ 
+	.banner_sablon_1 {
+		padding-bottom:40px; display:table;
+	}
+	.banner_sablon_2 {
+		padding-bottom:10px; margin-top: 50px; display:table;
+	}
+	.banner_sablon_3 {
+		padding-bottom:40px;  margin-top: 50px;  display:table;
+	}
+	.banner_sablon_4 {
+		padding-bottom:40px;  margin-top: 50px;  display:table;
+	}
+	.banner_sablon_5 {
+		padding-bottom:40px;  margin-top: 50px;  display:table;
+	}
+	.banner_sablon_6 {
+		padding-bottom:0px;  margin-top: 50px;  display:table;
+	}
+	.banner_sablon_7 {
+		padding-bottom:0px;  margin-top: 50px;  display:table;
+	}
+	
+	.medical_toursim_banner {
+		padding-bottom:0px; margin-top: 50px; display:table;
+	}
+	
+	.site_banner {
+		margin:0px auto; padding:0px; display:block; margin-top:10px; text-align:center; padding:2px; padding:2px; 
+	} 
+	.mobile_banner {
+		display:none; max-width:100%; margin:0px auto; padding:0px; margin-top:0px; text-align:center; border:2px solid #1693e1
+	} 	
+	.alert_banner {
+	  animation: blinker 0.5s linear infinite;   font-weight: bold; 
+	} 
+	@keyframes blinker {  
+		50% { opacity: 0.85;  }
+	} 
+
+
+	.no-padding > [class*="col-"] {
+		padding-right: 0; padding-left: 0;
+	}	
+	
+	.no-padding-left {
+		padding-right:0px; padding-left: 0;
+	}	
+	.no-padding-right  {
+		padding-left: 10px; padding-right: 0;
+	}	
+	
+	a#scrollUp {
+		position: fixed; z-index: 1020; right: 25px; bottom: 25px; display: none; width: 53px; height: 53px; border-radius: 50%;
+		font-size: 18px; line-height: 53px; color: #fff; text-decoration: none; text-align: center; cursor: pointer;
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1); transition: all 0.25s, bottom 0.75s ease-in-out;
+ 		-webkit-animation: bounce 1s ease infinite;
+		animation: bounce 3s ease infinite; 
+	}
+
+
+	a#scrollUp [class*='icon'] {
+		display: inline-block; transition: 0.5s;
+	} 
+	a#scrollUp:hover {
+		box-shadow: 0 0 0 10px rgba(51, 104, 198, 0.2);
+	} 
+	a#scrollUp:hover [class*='icon'] {
+		-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); filter: FlipH; -ms-filter: "FlipH";
+	} 
+	a#scrollUp.visible {
+		opacity: 1;mbottom: 45px;
+	} 
+	@media (max-width: 1023px) {
+		a#scrollUp.visible {
+			bottom: 65px;
+		}
+	}
+	@media (max-width: 1023px) {
+		a#scrollUp {
+			width: 41px; height: 41px; right: 15px; font-size: 13px; line-height: 41px;
+			display:none
+		}
+	} 	
+	
+	
+
+	.kapak_resimli .shadow img[src$="svg"] {
+		height:120px; width:120px;  margin-top:10px;
+	}
+
+	#post_icons img[src$="svg"] {
+		height:70px; width:70px;  margin-top:2px;
+	}
+
+	.klinik img[src$="svg"] {
+		max-height:120px;  margin-top:2px; object-fit:unset
+	}
+
+	#main-slider-full img[src$="svg"] {
+		/* background:#ddd; height:600px; padding-top:100px; padding-bottom:200px */
+	}
+	
+	.icons img[src$="svg"] {
+		height:70px; width:70px;  margin-top:2px;
+	}
+	
+	textarea.form-control {
+		height: 100px;
+	}
+	.mt-180 {
+		margin-top:60px;  margin-bottom:80px;
+	}	
+	.mt-80 {
+		margin-top:80px;
+	} 
+	.mt-50 {
+		margin-top:50px; display:block
+	} 
+	.mt-40 {
+		margin-top:40px;
+	}
+	.grey {
+		filter: gray; -webkit-filter: grayscale(1);  filter: grayscale(1);  
+	} 
+	.grey:hover {
+		-webkit-filter: grayscale(0); filter: none;
+	} 
+	.hover_effect {
+		display: block; position: relative; overflow: hidden; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
+	} 
+	.hover_effect:after { 
+		content: "\f0c1";   font-family: "FontAwesome"; background:#fff;
+		color:#000;  position: absolute; font-size: 1.0em; text-align: center; line-height: 30px; width: 30px; height: 30px; left: 50%; top: 50%; 
+		margin-left: -20px; margin-top: -20px; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out; -webkit-transform: scale(0.1, 0.1); 
+		transform: scale(0.1, 0.1); filter: alpha(opacity=0); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+		-moz-opacity: 0; -khtml-opacity: 0; opacity: 0;
+	} 
+	.hover_effect img {
+		display: block; position: relative; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out; 
+		-webkit-backface-visibility: hidden; backface-visibility: hidden;
+	} 
+	.hover_effect:hover:after {
+		-webkit-transform: scale(1, 1); transform: scale(1, 1); filter: alpha(opacity=60); -moz-opacity: .6; -khtml-opacity: .6; opacity: .6;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; 
+	} 
+	.hover_effect:hover img {
+		-webkit-transform: scale(1.1); transform: scale(1.1); filter: alpha(opacity=40); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+		-moz-opacity: 0.4; -khtml-opacity: 0.4; opacity: 0.5;
+	} 
+
+	.hover_effect_video:after { 
+		content: "\f16a";   font-family: "FontAwesome"; background:#fff;
+		color:#000;  position: absolute; font-size: 1.2em; text-align: center; line-height: 40px; width: 40px; height: 40px; left: 50%; top: 50%; 
+		margin-left: -20px; margin-top: -20px; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out; -webkit-transform: scale(0.1, 0.1); 
+		transform: scale(0.1, 0.1); filter: alpha(opacity=0); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+		-moz-opacity: 0; -khtml-opacity: 0; opacity: 0;
+	} 
+	.hover_effect_video img {
+		display: block; position: relative; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out; 
+		-webkit-backface-visibility: hidden; backface-visibility: hidden;
+	} 
+	.hover_effect_video:hover:after {
+		-webkit-transform: scale(1, 1); transform: scale(1, 1); filter: alpha(opacity=60); -moz-opacity: .6; -khtml-opacity: .6; opacity: .6;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; 
+	} 
+	.hover_effect_video:hover img {
+		-webkit-transform: scale(1.1); transform: scale(1.1); filter: alpha(opacity=40); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+		-moz-opacity: 0.4; -khtml-opacity: 0.4; opacity: 0.5;
+	} 
+
+
+	.shadow {  
+		box-shadow: 1px 6px 13px -7px rgba(0,0,0,0.36) 
+	} 
+ 
+ 	.pd0 {
+		padding-left:0px; padding-right:0px;
+	} 
+	/** 
+		Main Menu Animated
+	**/
+	
+ 	.animated { 
+		-webkit-animation-duration: 0.4s;
+		animation-duration: 0.4s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	 }
+	 @-webkit-keyframes fadeInDown {
+		0% {
+		   opacity: 0;
+		   -webkit-transform: translateY(-20px);
+		}
+		100% {
+		   opacity: 1;
+		   -webkit-transform: translateY(0);
+		}
+	 }
+	 @keyframes fadeInDown {
+		0% {
+		   opacity: 0;
+		   transform: translateY(-20px);
+		}
+		100% {
+		   opacity: 1;
+		   transform: translateY(0);
+		}
+	 }
+	 
+	 .fadeInDown {
+		-webkit-animation-name: fadeInDown;
+		animation-name: fadeInDown;
+	 }	
+
+
+
+
+
+	/** 
+		**************************************************
+					ACORDION SETTINGS
+		**************************************************
+	**/
+ 
+	.panel.panel-default{
+	   background: none;  box-shadow: none;
+	} 
+	#accordion{
+	   padding-right: 10px;
+	} 
+	.panel-default>.panel-heading {
+	   background: none;  border-radius: 0;  position: relative; padding: 6px 20px;  background:#fff
+	} 
+	.panel-group .panel{
+	   border-radius: 0;  background:#fff
+	} 
+	.panel-body{
+	   padding: 20px 20px 10px 20px;
+	} 
+	h5.panel-title a {
+	   font-size: 15px;  background:#fff;  padding: 8px 12px; line-height: normal; border: 1px solid #ececec; width:100%;
+	   border-radius: 0; box-shadow:0 6px 38px rgba(0, 0, 0, .05); display:block;
+	}  
+	h5.panel-title a:hover {
+	  background:#f2f2f2; 
+	} 
+ 
+	h5.panel-title span{
+	   float: right;
+	}  
+	h5.panel-title a.ezmo:before {
+		width: 26px; height: 26px; line-height: 26px; transition: 0.2s; font-weight:bold;
+		font-family: "FontAwesome"; position: absolute; z-index: 0;  font-size: 14px; right: 35px;  padding: 0 5px; text-align: center;  top: 26%;
+		content: "\f107"; color:#31649b; 
+	}  
+	h5.panel-title a.ezmoil:before {
+		width: 26px; height: 26px; line-height: 26px; font-family: "FontAwesome"; position: absolute; z-index: 0;  
+		font-size: 14px; right: 35px;  padding: 0 5px; text-align: center;  top: 26%; 
+		content: "\f107"; color:#31649b; transform: rotate(180deg);font-weight:bold;
+	} 
+ 
+
+
+	/** 
+		**************************************************
+				Form Settings
+		**************************************************
+	**/
+	#dynamic_form .form_bilgilendirme {
+		padding:4px 0px
+	}
+	#dynamic_form .form_bilgilendirme p {
+		font-size:12px; color: #ff3030;
+	} 
+	#dynamic_form .form-control {
+		margin-bottom:20px;
+		height: calc(1.5em + 0.75rem + 10px);
+		font-size:13px; 
+	} 
+	#dynamic_form  strong {
+		display:block; padding-bottom:10px; font-size:15px; 
+	} 
+	.custom-select {
+		display: inline-block;
+		width: 100%;
+		height: calc(2.25rem + 2px);
+		padding: .375rem 1.75rem .375rem .75rem;
+		line-height: 1.25;
+		color: #464a4c;
+		vertical-align: middle;
+		background: #fdfdfd url("https://dosyahastane.saglik.gov.tr/WebFiles/sablonlar/images/select.svg") no-repeat right .75rem center;
+		background-size: auto;
+		background-size: auto;
+		-webkit-background-size: 8px 10px;
+		background-size: 28px 15px;
+		border: 1px solid rgba(0,0,0,.15);
+		border-radius: .25rem;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		height: 38px;
+		border-radius: 6px;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	}
+  
+	#dynamic_form input[type="radio"], input[type="checkbox"] {
+		box-sizing: border-box;
+		padding: 0;
+		margin:0px 5px;
+		
+	}
+  
+	#dynamic_form textarea {
+		min-height: 108px; 
+	}
+
+
+	

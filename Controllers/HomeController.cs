@@ -11,6 +11,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Numerics;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Hospital_Template.Controllers
 {
@@ -26,40 +27,50 @@ namespace Hospital_Template.Controllers
 
         public IActionResult Index()
         {
-            HomeVM homeVM = new HomeVM()
+            try
             {
-                Hospital = _appDbContext.Hospitals
-                    .Include(h => h.Doctors)
-                    .ThenInclude(d => d.Appointments)
-                    .Where(d => !d.IsDeleted)
-                    .ToList(),
-
-                Doctors = _appDbContext.Doctor
-                    .Include(d => d.doctorPosition)
-                    .Where(d => !d.IsDeleted)
-                    .ToList(),
-
-                Appointments = _appDbContext.Appointments.ToList()
-            };
-
-            bool isAuthenticated = User.Identity.IsAuthenticated;
-            string username = User.Identity.Name;
-
-            // Kullanıcı giriş yapmışsa ve randevusu varsa H1 etiketini görünür yap
-            if (isAuthenticated)
-            {
-                var userAppointments = _appDbContext.Appointments
-                    .Where(a => a.PasientName == username && a.AppointmentDateTime != null)
-                    .ToList();
-
-                if (userAppointments.Count > 0)
+                HomeVM homeVM = new HomeVM()
                 {
-                    ViewData["ShowH1"] = true;
-                    ViewData["ShowModal"] = true;
-                }
-            }
+                    Hospital = _appDbContext.Hospitals
+                        .Include(h => h.Doctors)
+                        .ThenInclude(d => d.Appointments)
+                        .Where(d => !d.IsDeleted)
+                        .ToList(),
 
-            return View(homeVM);
+                    Doctors = _appDbContext.Doctor
+                        .Include(d => d.doctorPosition)
+                        .Include(d => d.Comements)
+                        .Where(d => !d.IsDeleted)
+                        .ToList(),
+
+                    Appointments = _appDbContext.Appointments.ToList()
+                };
+
+                bool isAuthenticated = User.Identity.IsAuthenticated;
+                string username = User.Identity.Name;
+
+                // Kullanıcı giriş yapmışsa ve randevusu varsa H1 etiketini görünür yap
+                if (isAuthenticated)
+                {
+                    var userAppointments = _appDbContext.Appointments
+                        .Where(a => a.PasientName == username && a.AppointmentDateTime != null)
+                        .ToList();
+
+                    if (userAppointments.Count > 0)
+                    {
+                        ViewData["ShowH1"] = true;
+                        ViewData["ShowModal"] = true;
+                    }
+                }
+
+                return View(homeVM);
+            }
+            catch (Exception ex)
+            {
+                // Hata ayrıntılarını logla (örneğin, Console.WriteLine kullanabilirsiniz)
+                Console.WriteLine($"Hata: {ex.Message}");
+                throw; // Hatanın yukarıya fırlatılması
+            }
         }
 
 
@@ -72,9 +83,9 @@ namespace Hospital_Template.Controllers
 
             HomeVM homeVM = new HomeVM()
             {
-                
-                Hospital = _appDbContext.Hospitals.Include(h => h.Doctors).Where(d=>!d.IsDeleted).ToList(),
-                Doctors = _appDbContext.Doctor.Include(d => d.doctorPosition).Where(d=>!d.IsDeleted).ToList()
+
+                Hospital = _appDbContext.Hospitals.Include(h => h.Doctors).Where(d => !d.IsDeleted).ToList(),
+                Doctors = _appDbContext.Doctor.Include(d => d.doctorPosition).Where(d => !d.IsDeleted).ToList()
             };
 
             return View(homeVM);
@@ -93,10 +104,10 @@ namespace Hospital_Template.Controllers
                     .FirstOrDefault(h => h.Id == hospitalId);
             }
 
-            List<DoctorPosition> uniquePositions = selectedHospital?.Doctors .Where(d => !d.IsDeleted)
+            List<DoctorPosition> uniquePositions = selectedHospital?.Doctors.Where(d => !d.IsDeleted)
                 .Select(d => d.doctorPosition)
                 .Where(dp => dp != null) // Null pozisyonları filtrele
-               
+
                 .Distinct()
                 .ToList();
 
@@ -105,9 +116,9 @@ namespace Hospital_Template.Controllers
                 SelectedHospital = selectedHospital,
                 DoctorPositions = uniquePositions,
 
-                Hospital = _appDbContext.Hospitals.Include(d => d.Doctors).Where(d=>!d.IsDeleted).ToList(),
+                Hospital = _appDbContext.Hospitals.Include(d => d.Doctors).Where(d => !d.IsDeleted).ToList(),
 
-                Doctors = _appDbContext.Doctor.Include(d => d.doctorPosition).Where(d =>!d.IsDeleted).ToList()
+                Doctors = _appDbContext.Doctor.Include(d => d.doctorPosition).Where(d => !d.IsDeleted).ToList()
             };
 
             return View(homeVM);
@@ -142,9 +153,15 @@ namespace Hospital_Template.Controllers
 
         public IActionResult HospitalDoctors()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Register", "Account");
+            }
+
+
             HomeVM homeVM = new HomeVM()
             {
-                Hospital = _appDbContext.Hospitals.Include(h => h.Doctors).Where(d=>!d.IsDeleted).ToList()
+                Hospital = _appDbContext.Hospitals.Include(h => h.Doctors).Where(d => !d.IsDeleted).ToList()
             };
 
             return View(homeVM);
@@ -154,10 +171,10 @@ namespace Hospital_Template.Controllers
 
         public IActionResult Hospital(int hospitalid)
         {
-            var selectedHospital= _appDbContext.Hospitals
+            var selectedHospital = _appDbContext.Hospitals
                 .Include(h => h.Doctors)
                 .ThenInclude(d => d.doctorPosition)
-                .Where(d=>!d.IsDeleted)
+                .Where(d => !d.IsDeleted)
                 .FirstOrDefault(h => h.Id == hospitalid);
 
             if (selectedHospital != null)
@@ -165,14 +182,14 @@ namespace Hospital_Template.Controllers
                 var model = new HomeVM
                 {
                     SelectedHospital = selectedHospital,
-                    Doctors = selectedHospital.Doctors.Where(d=>!d.IsDeleted).ToList(), // Doktorları doğrudan ekledik
-                    
+                    Doctors = selectedHospital.Doctors.Where(d => !d.IsDeleted).ToList(), // Doktorları doğrudan ekledik
+
                     DoctorPositions = selectedHospital.Doctors
                         .Select(d => d.doctorPosition)
-                        .Where(d=>!d.IsDeleted)
+                        .Where(d => !d.IsDeleted)
                         .Distinct()
                         .ToList(),
-                        
+
 
                 };
 
@@ -188,7 +205,7 @@ namespace Hospital_Template.Controllers
             var selectedHospital = _appDbContext.Hospitals
                 .Include(h => h.Doctors)
                 .ThenInclude(d => d.doctorPosition)
-                .Where(d=>!d.IsDeleted)
+                .Where(d => !d.IsDeleted)
                 .FirstOrDefault(h => h.Id == hospitalid);
 
             if (selectedHospital != null)
@@ -233,7 +250,7 @@ namespace Hospital_Template.Controllers
                 Doctor = doctor,
                 HospitalName = doctor.Hospital.Name,
                 PasitionName = doctor.doctorPosition.Position,
-                EmailAddress =email,
+                EmailAddress = email,
                 // Diğer gerekli verileri burada doldurabilirsiniz
             };
 
@@ -298,7 +315,7 @@ namespace Hospital_Template.Controllers
                 client.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
                 client.EnableSsl = true;
 
-                var fromAddress = new MailAddress(smtpUsername, appointment.HospitalName+" Randevu Bildirimi");
+                var fromAddress = new MailAddress(smtpUsername, appointment.HospitalName + " Randevu Bildirimi");
                 var toAddress = new MailAddress(doctorEmail);
 
                 using (var message = new MailMessage(fromAddress, toAddress))
@@ -349,10 +366,69 @@ namespace Hospital_Template.Controllers
             return View(appointment); // Aynı sayfada kalın
         }
 
+        public IActionResult DoctorComment()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+
+                List<Doctor> models = _appDbContext.Doctor.Include(m => m.Hospital).Where(d => !d.IsDeleted).ToList();
+                List<SelectListItem> modelItems = models.Select(m => new SelectListItem
+                {
+                    Value = m.Id.ToString(),
+                    Text = $"{m.Name} - {m.Hospital.Name}"
+                }).ToList();
+
+                ViewBag.Doctor = modelItems; 
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account"); // Kullanıcı giriş yapmamışsa, Login sayfasına yönlendir
+            }
+          
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DoctorComment(DoctorViewModel member)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                // Kullanıcı adını al
+                string username = User.Identity.Name;
+
+                // İlgili doktoru bul ve adını yorum nesnesine ekle
+                Doctor doctor = _appDbContext.Doctor.Find(member.DoctorId);
+
+                if (doctor != null)
+                {
+                    Comement newComment = new Comement
+                    {
+                        CommentText = member.Comment,
+                        DoctorId = member.DoctorId,
+                        CommentDate = DateTime.Now,
+                        UserName = username  // Kullanıcı adını yorum nesnesine ekleyin
+                    };
+
+                    // Comment'i veritabanına ekleyin
+                    await _appDbContext.Comments.AddAsync(newComment);
+                    await _appDbContext.SaveChangesAsync();
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+        }
 
 
 
-        
+
+
+
 
 
 
@@ -363,6 +439,7 @@ namespace Hospital_Template.Controllers
 
     }
 }
+
 
 
 

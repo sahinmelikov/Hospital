@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UwhLCPMDctxbUHXLylCBYe25XP43LeCZn+hCauZdvhE=",
+  "Hash": "BmyFjHmYq5Y6qUFbfXgcTMAsWyej6sLGkh2qzJhaaLk=",
   "Source": "Hospital_Template",
   "BasePath": "_content/Hospital_Template",
   "Mode": "Default",
@@ -2924,23 +2924,6 @@
       "OriginalItemSpec": "wwwroot\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-bg_glass_95_fef1ec_1x400.png"
     },
     {
-      "Identity": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-bg_highlight-soft_75_cccccc_1x100.png",
-      "SourceId": "Hospital_Template",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\",
-      "BasePath": "_content/Hospital_Template",
-      "RelativePath": "docpulse.com/AboutDoctor/egehospital.az/wp-content/plugins/contact-form-7/includes/js/jquery-ui/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-bg_highlight-soft_75_cccccc_1x100.png"
-    },
-    {
       "Identity": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\AboutDoctor\\egehospital.az\\wp-content\\plugins\\contact-form-7\\includes\\js\\jquery-ui\\themes\\smoothness\\images\\ui-icons_222222_256x240.png",
       "SourceId": "Hospital_Template",
       "SourceType": "Discovered",
@@ -5183,6 +5166,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\docpulse.com\\comments\\feed\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\Contact\\css\\contact.css",
+      "SourceId": "Hospital_Template",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\",
+      "BasePath": "_content/Hospital_Template",
+      "RelativePath": "docpulse.com/Contact/css/contact.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\docpulse.com\\Contact\\css\\contact.css"
+    },
+    {
+      "Identity": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\Contact\\css\\services.css",
+      "SourceId": "Hospital_Template",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\",
+      "BasePath": "_content/Hospital_Template",
+      "RelativePath": "docpulse.com/Contact/css/services.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\docpulse.com\\Contact\\css\\services.css"
     },
     {
       "Identity": "C:\\Users\\sahin\\source\\repos\\Hospital_Template\\Hospital_Template\\wwwroot\\docpulse.com\\contact-us\\index.html",

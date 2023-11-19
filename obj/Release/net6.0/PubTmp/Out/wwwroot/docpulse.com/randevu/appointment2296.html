@@ -1,0 +1,279 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from 195.175.45.150:7070/randevu/appointment.php?lang=tr by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 16:45:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+﻿    <title>HAYAT HASTANESİ</title>
+    
+    <meta name="viewport" content="width=550">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="randevu, hastane" />
+    <meta name="description" content="HAYAT HASTANESİ" />
+    <meta name="robots" content="index,follow" />
+    <meta name="Author" content="Sinerji Bilisim" />
+    <meta name="Developer" content="Sinerji Bilisim" />
+    
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    
+    <script src="js/common.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/mask.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/zebra_datepicker.js"></script>
+    <script>
+		var number_elements = ['fr_identity_no', 'fr_birth_date', 'fr_upn', 'fr_mobile_phone', 'fr_home_phone', 'fr_work_phone', 'fr_verification_code'];
+		var letter_elements = ['fr_name', 'fr_surname', 'fr_father_name', 'fr_mother_name'];
+		
+		var special_keys = [8, 9, 13, 16, 17, 18, 20, 37, 39, 46, 144];
+		var number_keys  = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
+		var letter_keys  = [65, 66, 67, 220, 68, 69, 70, 71, 219, 72, 73, 222, 74, 75, 76, 77, 78, 79, 191, 80, 81, 82, 83, 186, 84, 85, 221, 86, 87, 88, 89, 90, 32, 190];
+		var numbers      = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+		var letters      = ['A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'O', 'Ö', 'P', 'Q', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'W', 'X', 'Y', 'Z', ' ', '.'];
+		
+		var num_msg = 'Yalnızca rakam giriniz!';
+		var char_msg = 'Yalnızca harf giriniz!';
+		
+		function show_warning(element, msg) {
+			$('#errmsg').css('top', $(element).offset().top - $('#main_div').offset().top);
+			$('#errmsg').html(msg).show().fadeOut('slow');
+		}
+		
+		function check_date(which) {//KULLANILMIYOR
+			if(which < 48 || which > 57) return false;
+			
+			var now = new Date;
+			var year = now.getFullYear();
+			var month = now.getMonth() + 1;
+			var day = now.getDate();
+			var old_year = year - 120;
+			var y1 = Math.floor(year / 1000);
+			var y2 = Math.floor(year / 100);
+			var y3 = Math.floor(year / 10);
+			var o1 = Math.floor(old_year / 1000);
+			var o2 = Math.floor(old_year / 100);
+			var o3 = Math.floor(old_year / 10);
+			
+			if($('#fr_birth_date').val().length == 0) {
+				if(which < 48 || which > 51) return false;
+			}
+			if($('#fr_birth_date').val().length == 1 && $('#fr_birth_date').val()[0] == '0') {
+				if(which < 49 || which > 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 1 && $('#fr_birth_date').val()[0] == '3') {
+				if(which < 48 || which > 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 3) {
+				if(which < 48 || which > 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 49 || which > 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[3] == '1') {
+				if(which < 48 || which > 50) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val()[0] == '3' && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 48 || which > 57 || which == 50) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val().substr(0, 2) == '31' && $('#fr_birth_date').val()[3] == '0') {
+				if(which < 48 || which > 57 || which == 50 || which == 52 || which == 54 || which == 57) return false;
+			}
+			if($('#fr_birth_date').val().length == 4 && $('#fr_birth_date').val().substr(0, 2) == '31' && $('#fr_birth_date').val()[3] == '1') {
+				if(which < 48 || which > 57 || which == 49) return false;
+			}
+			if($('#fr_birth_date').val().length == 6) {
+				if(which - 48 != o1 && which - 48 != y1) return false;
+			}
+			if($('#fr_birth_date').val().length == 7) {
+				var c2 = $('#fr_birth_date').val().substr(6, 1) + (which - 48);
+				if(c2 < o2 || c2 > y2) return false;
+			}
+			if($('#fr_birth_date').val().length == 8) {
+				var c3 = $('#fr_birth_date').val().substr(6, 2) + (which - 48);
+				if(c3 < o3 || c3 > y3) return false;
+			}
+			if($('#fr_birth_date').val().length == 9) {
+				var c4 = $('#fr_birth_date').val().substr(6, 3) + (which - 48);
+				if(c4 < old_year || c4 > year) return false;
+				if(c4 == year && parseInt($('#fr_birth_date').val().substr(3, 2)) > month) return false;
+				if(c4 == year && parseInt($('#fr_birth_date').val().substr(3, 2)) == month && parseInt($('#fr_birth_date').val().substr(0, 2)) > day) return false;
+				if($('#fr_birth_date').val().substr(0, 5) == '29.02' && c4 % 4 > 0) return false;
+			}
+			
+			return true;
+		}
+		
+		$(document).ready(function() {
+			$('input').keyup(function(e) {
+				//input type date olarak değiştirildi kontrole gerek kalmadı
+				if (e.target.getAttribute("name") != "fr_birth_date")
+				{
+					$(e.target).val($(e.target).val().replace("ı","I").replace("i","İ").toUpperCase());
+					
+					if(($(e.target).attr('id') == 'fr_identity_no' && $('#fr_identity_no').val().length == 11) || ($(e.target).attr('id') == 'fr_birth_date' && $('#fr_birth_date').val().length == 10)) {
+						$(":input")[$(":input").index(document.activeElement) + 1].focus();
+					}
+				}
+			});
+			
+			$('input').keydown(function(e) {
+				if(number_elements.indexOf($(e.target).attr('id')) >= 0) {
+					if(number_keys.indexOf(e.which) == -1 && special_keys.indexOf(e.which) == -1) {
+						show_warning(e.target, num_msg);
+						return false;
+					}
+				} else if(letter_elements.indexOf($(e.target).attr('id')) >= 0) {
+					if(letter_keys.indexOf(e.which) == -1 && special_keys.indexOf(e.which) == -1) {
+						show_warning(e.target, char_msg);
+						return false;
+					}
+				}
+				
+			//	if(letter_keys.indexOf(e.which) >= 0 && $(e.target).attr('id') != 'fr_email') {
+			//		$(e.target).val($(e.target).val() + letters[letter_keys.indexOf(e.which)]);
+			//		return false;
+			//	}
+			});
+			//input type date olarak değiştirildi kontrole gerek kalmadı
+			$('#fr_birth_date2').keypress(function(e) {
+				return check_date(e.which);
+			});
+			
+			//$('#fr_identity_no').mask('99999999999');
+			//$('#fr_birth_date').mask('99.99.9999');
+			$('#fr_mobile_phone').mask('(999) 999 99 99');
+			$('#fr_home_phone').mask('(999) 999 99 99');
+			$('#fr_work_phone').mask('(999) 999 99 99');
+			
+			$('#fr_birth_date2').keydown(function(e) {
+				if(e.which != 8 && e.which != 46) {
+					if($('#fr_birth_date').val().length == 2 || $('#fr_birth_date').val().length == 5) $('#fr_birth_date').val($('#fr_birth_date').val() + '.');
+				}
+			});
+			
+			$('#fr_birth_date2').keyup(function(e) {
+				if(e.which != 8 && e.which != 46) {
+					if($('#fr_birth_date').val().length == 2 || $('#fr_birth_date').val().length == 5) $('#fr_birth_date').val($('#fr_birth_date').val() + '.');
+				}
+			});
+			
+
+			//$('#fr_birth_date').Zebra_DatePicker();
+			
+			var myTimer = setInterval(function() { $('#selected').fadeToggle('slow'); }, 1000);
+			
+			$('#main_table').css('width', $(window).width() - 33);
+		});
+		
+		$(window).resize(function() {
+			$('#main_table').css('width', $(window).width() - 33);
+		});
+		
+		function get_alert_message(param, value) {
+			$.ajaxSetup({ async: false });
+			var choice = true;
+			$.getJSON('get_alert_message5a85.html?type=1&amp;param=' + param + '&value=' + value,
+				function(data) {
+					if(data.Rows) {
+						for(var i = 0; i < data.Rows.length; i++) {
+							var rowData = data.Rows[i];
+							if(!window.confirm(rowData.message.replaceAll('~', '\r'))) {
+								i = data.Rows.length;
+								choice = false;
+							}
+						}
+					}
+				}
+			);
+			return choice;
+		}
+    </script>
+        <script>
+    
+		function set_selection(choice) {
+			window.location = choice;
+		}
+    </script>
+  </head>
+  <body>
+    <table id="main_table" width="99%" align="left" border="0">
+      <tr>
+        <td>
+          <table align="center" border="0">
+﻿            <tr>
+              <td width="10"></td>
+              <td align="center"><a href="index.html"><img src="images/hospital_logo.png" width="250" /></a></td>
+              <td width="10"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="center" style="width:490px;">
+                <div class="shadow_top"></div>
+                <button class="substation_list" onclick="set_selection('new_appointment.html');">
+                  <table align="center">
+                    <tr height="60">
+                      <td><img src="images/new_appointment.png" width="60" /></td>
+                      <td id="dt_new" class="menu_item_caption">YENİ RANDEVU</td>
+                    </tr>
+                  </table>
+                </button>
+                <div class="shadow_bottom"></div>
+                <div class="shadow_top"></div>
+                <button class="substation_list" onclick="set_selection('appointment_check_cancel.html');">
+                  <table align="center">
+                    <tr height="60">
+                      <td><img src="images/appointment_check_cancel.png" width="60" /></td>
+                      <td id="dt_query" class="menu_item_caption">RANDEVU SORGULAMA / İPTAL</td>
+                    </tr>
+                  </table>
+                </button>
+                <div class="shadow_bottom"></div>
+                <div class="shadow_top"></div>
+                <button class="substation_list" onclick="set_selection('available_appointment_status.html');">
+                  <table align="center">
+                    <tr height="60">
+                      <td><img src="images/available_appointment_status.png" width="60" /></td>
+                      <td id="dt_status" class="menu_item_caption">MÜSAİT RANDEVU DURUMU</td>
+                    </tr>
+                  </table>
+                </button>
+                <div class="shadow_bottom"></div>
+              </td>
+              <td></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+      </tr>
+    </table>
+  <div id="language" align="center">
+    <input type="hidden" id="langsession" name="langsession" value="tr" />
+    <a href="appointment2296.html?lang=tr">
+      <img class="lang" src="images/tr.png"/>
+    </a>
+    <a href="appointment9ed2.html?lang=en">
+      <img class="lang" src="images/en.png"/>
+    </a>
+  </div>
+
+<script>
+  var pt = 0;
+
+  var txt01 = ['YENİ RANDEVU', 'NEW APPOINTMENT'];
+  var txt02 = ['RANDEVU SORGULAMA / İPTAL', 'APPOINTMENT INQUIRY / CANCELLATION'];
+  var txt03 = ['MÜSAİT RANDEVU DURUMU', 'AVAILABLE APPOINTMENT STATUS'];
+
+  $('#dt_new').html(txt01[pt]);
+  $('#dt_query').html(txt02[pt]);
+  $('#dt_status').html(txt03[pt]);
+</script>
+  </body>
+
+<!-- Mirrored from 195.175.45.150:7070/randevu/appointment.php?lang=tr by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 16:45:32 GMT -->
+</html>

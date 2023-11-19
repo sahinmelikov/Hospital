@@ -2,6 +2,7 @@
 using Hospital_Template.Models;
 using Hospital_Template.Utilities.Extensions;
 using Hospital_Template.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Hospital_Template.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,Maderator")]
     public class HospitalController : Controller
     {
         private readonly AppDbContext _appDbContext;

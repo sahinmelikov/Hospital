@@ -19,6 +19,7 @@ namespace Hospital_Template.Models
 		public int DoctorPositionId { get;set; }
 		public List<Appointment>Appointments { get; set; }
 		public DateTime? TimeDoctor{ get; set; }
+		public List<Comement> Comements { get; set; }
 		
 			
     }

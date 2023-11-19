@@ -1,0 +1,91 @@
+	
+ 
+	/** 
+		**************************************************
+				Sehir Hataneleri için  Mobil İkonlar Settings
+		**************************************************
+	**/
+	
+	.mobil_baglantilar {
+		list-style-type:none; display:none
+	}  
+	.mobil_baglantilar li a {
+		display:block;  margin-bottom:10px;  border-bottom:1px solid #f2f2f2;  box-shadow: 0 6px 38px rgba(0, 0, 0, .05); 
+		border-radius: 5px; border: 1px solid #ececec; background:#fff;	 height:52px; padding: 5px 12px; 
+	}
+	.mobil_baglantilar li a:hover {
+		background:#f3f3f3; box-shadow: 0 6px 38px rgba(0, 0, 0, .25); 
+	}
+	
+	.mobil_baglantilar li a img {
+		float:left; width:40px; height:40px; border-radius:50%; margin-right:20px;
+	} 	
+	 	
+	.mobil_baglantilar li a span {
+		display:block; padding-top:10px; color:#777;  
+	} 	
+ 	 
+	.post_item_st {
+		margin:0px auto; padding:0px; text-align:center; display:block; padding:30px 10px
+	}
+	.post_item_st div {
+		background:#fff; padding:30px 10px
+	}
+	
+	.post_item_st h2 {
+		display:block;  font-size:27px;  
+	}
+		
+	.post_item_st p {
+		display:block; padding:5px 10px; font-size:17px; 
+	}
+		
+	.post_item_st a {
+		padding:8px 8px; border-radius:4px; font-size:13px;
+	}
+	  
+	  
+	  
+	  
+	/**
+		above menu
+	**/
+	
+	.icon-boxed_st {
+		padding:20px 10px; margin:0px auto; text-align:center
+	}
+		
+	.icon-boxed_st a {
+		background:#fff; height:110px; padding:15px; display:block;
+		-o-transition:.1s;
+		-ms-transition:.1s;
+		-moz-transition:.1s;
+		-webkit-transition:.1s; 
+		-webkit-box-shadow: 3px 10px 52px -17px rgba(0,0,0,0.15);
+		-moz-box-shadow: 3px 10px 52px -17px rgba(0,0,0,0.15);
+		box-shadow: 3px 10px 52px -17px rgba(0,0,0,0.25);	
+	}
+	 
+	.icon-boxed_st a:hover {
+		-webkit-box-shadow: 3px 10px 52px -17px rgba(0,0,0,0.75);
+		-moz-box-shadow: 3px 10px 52px -17px rgba(0,0,0,0.75);
+		box-shadow: 3px 10px 52px -17px rgba(0,0,0,0.75); 
+		transform: scale(0.957, 0.957);
+		-o-transition:.2s;
+		-ms-transition:.2s;
+		-moz-transition:.2s;
+		-webkit-transition:.2s;
+	}
+   	.icon-boxed_st h2 {
+		text-align:center; margin:0px auto; padding:0px; display:block;  padding-top:15px; font-size:23px; color:#444
+	} 
+   	.icon-boxed_st p {
+		text-align:center; margin:0px auto; padding:0px; display:block;  padding-top:15px; font-size:13px; color:#777
+	} 
+	
+	
+	
+	
+	
+	
+	
